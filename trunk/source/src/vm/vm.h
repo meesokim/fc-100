@@ -240,6 +240,11 @@
 #include "phc25/phc25.h"
 #endif
 
+// GOLDSTAR FC-100
+#ifdef _FC100
+#include "fc100/fc100.h"
+#endif
+
 // CASIO PV-1000
 #ifdef _PV1000
 #include "pv1000/pv1000.h"
