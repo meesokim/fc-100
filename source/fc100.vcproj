@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="FC-100"
+	Name="fc100"
 	ProjectGUID="{F62D036D-7569-431B-9C55-C056A4D3145A}"
 	RootNamespace="FC-100"
 	TargetFrameworkVersion="131072"
