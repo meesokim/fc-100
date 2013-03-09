@@ -1,0 +1,2740 @@
+dZ80 2.0 Reference file from the disassembly of "*\BASIC(FC-100).ROM".
+
+Input Port Reference (27 entries)
+---------------------------------
+
+Input Port 0000H. 2 references:
+-------------------------------
+
+   1a65H: IN      A,(00H)
+   1bb2H: IN      A,(00H)
+
+Input Port 0002H. 1 references:
+-------------------------------
+
+   1bc3H: IN      A,(02H)
+
+Input Port 0006H. 2 references:
+-------------------------------
+
+   1bbaH: IN      A,(06H)
+   1bd9H: IN      A,(06H)
+
+Input Port 000dH. 1 references:
+-------------------------------
+
+   013bH: IN      A,(0DH)
+
+Input Port 000eH. 1 references:
+-------------------------------
+
+   0199H: IN      A,(0EH)
+
+Input Port 000fH. 1 references:
+-------------------------------
+
+   5bc1H: IN      A,(0FH)
+
+Input Port 0022H. 4 references:
+-------------------------------
+
+   29c5H: IN      A,(22H)
+   2ab9H: IN      A,(22H)
+   2ac4H: IN      A,(22H)
+   2accH: IN      A,(22H)
+
+Input Port 0041H. 1 references:
+-------------------------------
+
+   1048H: IN      A,(41H)
+
+Input Port 0044H. 3 references:
+-------------------------------
+
+   103dH: IN      A,(44H)
+   2829H: IN      A,(44H)
+   2848H: IN      A,(44H)
+
+Input Port 004eH. 2 references:
+-------------------------------
+
+   01ddH: IN      A,(4EH)
+   045bH: IN      A,(4EH)
+
+Input Port 00b0H. 4 references:
+-------------------------------
+
+   19ffH: IN      A,(0B0H)
+   1cd4H: IN      A,(0B0H)
+   27d5H: IN      A,(0B0H)
+   2887H: IN      A,(0B0H)
+
+Input Port 00b8H. 5 references:
+-------------------------------
+
+   1cbeH: IN      A,(0B8H)
+   27d0H: IN      A,(0B8H)
+   27f3H: IN      A,(0B8H)
+   287bH: IN      A,(0B8H)
+   28f5H: IN      A,(0B8H)
+
+
+Output Port Reference (58 entries)
+----------------------------------
+
+Output Port 0006H. 1 references:
+--------------------------------
+
+   021fH: OUT     (06H),A
+
+Output Port 000cH. 1 references:
+--------------------------------
+
+   0262H: OUT     (0CH),A
+
+Output Port 0011H. 1 references:
+--------------------------------
+
+   0384H: OUT     (11H),A
+
+Output Port 001bH. 1 references:
+--------------------------------
+
+   031fH: OUT     (1BH),A
+
+Output Port 0021H. 3 references:
+--------------------------------
+
+   29cdH: OUT     (21H),A
+   2abeH: OUT     (21H),A
+   2af2H: OUT     (21H),A
+
+Output Port 0023H. 6 references:
+--------------------------------
+
+   29c2H: OUT     (23H),A
+   29c9H: OUT     (23H),A
+   2ab7H: OUT     (23H),A
+   2ac2H: OUT     (23H),A
+   2acaH: OUT     (23H),A
+   2aefH: OUT     (23H),A
+
+Output Port 0031H. 2 references:
+--------------------------------
+
+   2920H: OUT     (31H),A
+   2936H: OUT     (31H),A
+
+Output Port 0033H. 9 references:
+--------------------------------
+
+   0f5fH: OUT     (33H),A
+   1063H: OUT     (33H),A
+   1a01H: OUT     (33H),A
+   2807H: OUT     (33H),A
+   289bH: OUT     (33H),A
+   3459H: OUT     (33H),A
+   5c48H: OUT     (33H),A
+   5eb2H: OUT     (33H),A
+   5ee4H: OUT     (33H),A
+
+Output Port 0040H. 1 references:
+--------------------------------
+
+   2839H: OUT     (40H),A
+
+Output Port 0042H. 3 references:
+--------------------------------
+
+   0f6bH: OUT     (42H),A
+   2827H: OUT     (42H),A
+   2850H: OUT     (42H),A
+
+Output Port 0043H. 4 references:
+--------------------------------
+
+   2842H: OUT     (43H),A
+   2846H: OUT     (43H),A
+   2858H: OUT     (43H),A
+   285fH: OUT     (43H),A
+
+Output Port 0060H. 2 references:
+--------------------------------
+
+   1991H: OUT     (60H),A
+   2237H: OUT     (60H),A
+
+Output Port 0061H. 2 references:
+--------------------------------
+
+   19a6H: OUT     (61H),A
+   2230H: OUT     (61H),A
+
+Output Port 0070H. 9 references:
+--------------------------------
+
+   0d33H: OUT     (70H),A
+   17f8H: OUT     (70H),A
+   19aaH: OUT     (70H),A
+   22e4H: OUT     (70H),A
+   3190H: OUT     (70H),A
+   3cb0H: OUT     (70H),A
+   3cc9H: OUT     (70H),A
+   3ce0H: OUT     (70H),A
+   3cf8H: OUT     (70H),A
+
+Output Port 0071H. 3 references:
+--------------------------------
+
+   198fH: OUT     (71H),A
+   19a4H: OUT     (71H),A
+   222eH: OUT     (71H),A
+
+Output Port 00acH. 1 references:
+--------------------------------
+
+   0241H: OUT     (0ACH),A
+
+Output Port 00b0H. 2 references:
+--------------------------------
+
+   27ffH: OUT     (0B0H),A
+   2907H: OUT     (0B0H),A
+
+Output Port 00b8H. 7 references:
+--------------------------------
+
+   1cd2H: OUT     (0B8H),A
+   1ceeH: OUT     (0B8H),A
+   2927H: OUT     (0B8H),A
+   2929H: OUT     (0B8H),A
+   292dH: OUT     (0B8H),A
+   2931H: OUT     (0B8H),A
+   2934H: OUT     (0B8H),A
+
+
+Direct address Reference (279 entries)
+--------------------------------------
+
+Direct address 6000H. 1 references:
+-----------------------------------
+
+   0057H: LD      HL,6000H
+
+Direct address 6404H. 1 references:
+-----------------------------------
+
+   1155H: LD      DE,6404H
+
+Direct address 7000H. 1 references:
+-----------------------------------
+
+   2241H: LD      DE,7000H
+
+Direct address 7218H. 1 references:
+-----------------------------------
+
+   4c2aH: LD      DE,7218H
+
+Direct address 772bH. 1 references:
+-----------------------------------
+
+   55a2H: LD      BC,772BH
+
+Direct address 7800H. 1 references:
+-----------------------------------
+
+   1993H: LD      HL,7800H
+
+Direct address 7d9aH. 1 references:
+-----------------------------------
+
+   5c0cH: LD      SP,7D9AH
+
+Direct address 7e22H. 1 references:
+-----------------------------------
+
+   5b40H: LD      BC,7E22H
+
+Direct address 7f00H. 2 references:
+-----------------------------------
+
+   5b54H: LD      BC,7F00H
+   5b76H: LD      BC,7F00H
+
+Direct address 7f80H. 1 references:
+-----------------------------------
+
+   5b60H: LD      BC,7F80H
+
+Direct address 8000H. 4 references:
+-----------------------------------
+
+   19b9H: LD      HL,8000H
+   19c0H: LD      HL,8000H
+   4f93H: LD      HL,8000H
+   5ff0H: LD      BC,8000H
+
+Direct address 8031H. 1 references:
+-----------------------------------
+
+   4c27H: LD      BC,8031H
+
+Direct address 8080H. 1 references:
+-----------------------------------
+
+   5b69H: LD      BC,8080H
+
+Direct address 8100H. 4 references:
+-----------------------------------
+
+   0a0eH: LD      BC,8100H
+   597eH: LD      BC,8100H
+   5a10H: LD      BC,8100H
+   5be8H: LD      BC,8100H
+
+Direct address 8138H. 1 references:
+-----------------------------------
+
+   59ccH: LD      BC,8138H
+
+Direct address 9000H. 1 references:
+-----------------------------------
+
+   595aH: LD      BC,9000H
+
+Direct address 9080H. 1 references:
+-----------------------------------
+
+   4ecdH: LD      BC,9080H
+
+Direct address 9143H. 1 references:
+-----------------------------------
+
+   5723H: LD      BC,9143H
+
+Direct address 9180H. 1 references:
+-----------------------------------
+
+   185eH: LD      BC,9180H
+
+Direct address 9474H. 2 references:
+-----------------------------------
+
+   5406H: LD      BC,9474H
+   574eH: LD      BC,9474H
+
+Direct address 0a525H. 1 references:
+------------------------------------
+
+   2796H: LD      HL,0A525H
+
+Direct address 0aa3bH. 1 references:
+------------------------------------
+
+   59cfH: LD      DE,0AA3BH
+
+Direct address 0af00H. 1 references:
+------------------------------------
+
+   58d1H: LD      BC,0AF00H
+
+Direct address 0b60eH. 1 references:
+------------------------------------
+
+   55cdH: LD      BC,0B60EH
+
+Direct address 0bffeH. 1 references:
+------------------------------------
+
+   0083H: LD      HL,0BFFEH
+
+Direct address 0c000H. 1 references:
+------------------------------------
+
+   1e16H: LD      HL,0C000H
+
+Direct address 0c001H. 1 references:
+------------------------------------
+
+   1e1bH: LD      DE,0C001H
+
+Direct address 0c400H. 1 references:
+------------------------------------
+
+   19c5H: LD      HL,0C400H
+
+Direct address 0c423H. 1 references:
+------------------------------------
+
+   1d9dH: LD      DE,0C423H
+
+Direct address 0c463H. 1 references:
+------------------------------------
+
+   27c1H: LD      DE,0C463H
+
+Direct address 0c4a3H. 1 references:
+------------------------------------
+
+   2971H: LD      DE,0C4A3H
+
+Direct address 0c623H. 2 references:
+------------------------------------
+
+   2967H: LD      HL,0C623H
+   2e0cH: LD      DE,0C623H
+
+Direct address 0c692H. 1 references:
+------------------------------------
+
+   2cb3H: LD      HL,0C692H
+
+Direct address 0c695H. 1 references:
+------------------------------------
+
+   1ea0H: LD      HL,0C695H
+
+Direct address 0c697H. 1 references:
+------------------------------------
+
+   21e9H: LD      DE,0C697H
+
+Direct address 0c699H. 1 references:
+------------------------------------
+
+   21ddH: LD      DE,0C699H
+
+Direct address 0c69bH. 1 references:
+------------------------------------
+
+   2beeH: LD      HL,0C69BH
+
+Direct address 0c69cH. 1 references:
+------------------------------------
+
+   21e0H: LD      HL,0C69CH
+
+Direct address 0c6bbH. 1 references:
+------------------------------------
+
+   380eH: LD      DE,0C6BBH
+
+Direct address 0c6bdH. 3 references:
+------------------------------------
+
+   1e62H: LD      HL,0C6BDH
+   386bH: LD      DE,0C6BDH
+   3878H: LD      DE,0C6BDH
+
+Direct address 0c6ceH. 1 references:
+------------------------------------
+
+   21ecH: LD      HL,0C6CEH
+
+Direct address 0c7ffH. 1 references:
+------------------------------------
+
+   0d3dH: LD      HL,0C7FFH
+
+Direct address 0cd10H. 1 references:
+------------------------------------
+
+   0d4bH: LD      HL,0CD10H
+
+Direct address 0dffeH. 1 references:
+------------------------------------
+
+   00a6H: LD      HL,0DFFEH
+
+Direct address 0e000H. 3 references:
+------------------------------------
+
+   198aH: LD      SP,0E000H
+   1996H: LD      DE,0E000H
+   1e2bH: LD      DE,0E000H
+
+Direct address 0e1c1H. 1 references:
+------------------------------------
+
+   5052H: LD      BC,0E1C1H
+
+Direct address 0f483H. 1 references:
+------------------------------------
+
+   4c19H: LD      DE,0F483H
+
+Direct address 0f5e5H. 1 references:
+------------------------------------
+
+   460eH: LD      DE,0F5E5H
+
+Direct address 0f650H. 1 references:
+------------------------------------
+
+   0471H: LD      BC,0F650H
+
+Direct address 0f800H. 1 references:
+------------------------------------
+
+   1e34H: LD      DE,0F800H
+
+Direct address 0f983H. 1 references:
+------------------------------------
+
+   5b43H: LD      DE,0F983H
+
+Direct address 0f9feH. 1 references:
+------------------------------------
+
+   00acH: LD      HL,0F9FEH
+
+Direct address 0fa00H. 2 references:
+------------------------------------
+
+   19acH: LD      HL,0FA00H
+   19dfH: LD      DE,0FA00H
+
+Direct address 0fa01H. 1 references:
+------------------------------------
+
+   19afH: LD      DE,0FA01H
+
+Direct address 0fa0bH. 2 references:
+------------------------------------
+
+   1a34H: LD      HL,0FA0BH
+   1a81H: LD      HL,0FA0BH
+
+Direct address 0fa1aH. 1 references:
+------------------------------------
+
+   1a8bH: LD      HL,0FA1AH
+
+Direct address 0fa1bH. 1 references:
+------------------------------------
+
+   1a15H: LD      HL,0FA1BH
+
+Direct address 0fa1cH. 2 references:
+------------------------------------
+
+   1a23H: LD      HL,0FA1CH
+   1a3aH: LD      HL,0FA1CH
+
+Direct address 0fa21H. 3 references:
+------------------------------------
+
+   1b20H: LD      DE,0FA21H
+   208eH: LD      BC,0FA21H
+   31adH: LD      BC,0FA21H
+
+Direct address 0fa49H. 1 references:
+------------------------------------
+
+   1b2eH: LD      DE,0FA49H
+
+Direct address 0fa74H. 1 references:
+------------------------------------
+
+   1a5aH: LD      HL,0FA74H
+
+Direct address 0fa75H. 1 references:
+------------------------------------
+
+   1a40H: LD      HL,0FA75H
+
+Direct address 0fa77H. 3 references:
+------------------------------------
+
+   1a2dH: LD      BC,(0FA77H)
+   1a7aH: LD      BC,(0FA77H)
+   1adbH: LD      (0FA77H),BC
+
+Direct address 0fa7aH. 1 references:
+------------------------------------
+
+   1a6aH: LD      HL,0FA7AH
+
+Direct address 0fa7cH. 1 references:
+------------------------------------
+
+   1dc5H: LD      HL,0FA7CH
+
+Direct address 0faa5H. 1 references:
+------------------------------------
+
+   2deaH: LD      HL,0FAA5H
+
+Direct address 0faabH. 2 references:
+------------------------------------
+
+   3344H: LD      HL,0FAABH
+   3361H: LD      HL,0FAABH
+
+Direct address 0faacH. 2 references:
+------------------------------------
+
+   2d67H: LD      (0FAACH),DE
+   2d9bH: LD      DE,(0FAACH)
+
+Direct address 0faafH. 1 references:
+------------------------------------
+
+   2a7aH: LD      HL,0FAAFH
+
+Direct address 0fab0H. 2 references:
+------------------------------------
+
+   2a8aH: LD      HL,0FAB0H
+   2de2H: LD      HL,0FAB0H
+
+Direct address 0fab3H. 1 references:
+------------------------------------
+
+   3a81H: LD      HL,0FAB3H
+
+Direct address 0fab9H. 1 references:
+------------------------------------
+
+   26c5H: LD      HL,0FAB9H
+
+Direct address 0fac6H. 1 references:
+------------------------------------
+
+   3fc6H: LD      (0FAC6H),DE
+
+Direct address 0faccH. 1 references:
+------------------------------------
+
+   3feeH: LD      DE,(0FACCH)
+
+Direct address 0faceH. 1 references:
+------------------------------------
+
+   404fH: LD      (0FACEH),DE
+
+Direct address 0fad8H. 2 references:
+------------------------------------
+
+   3574H: LD      HL,0FAD8H
+   35d0H: LD      HL,0FAD8H
+
+Direct address 0fadeH. 7 references:
+------------------------------------
+
+   34a1H: LD      HL,0FADEH
+   34d1H: LD      BC,0FADEH
+   3564H: LD      HL,0FADEH
+   35feH: LD      HL,0FADEH
+   360cH: LD      HL,0FADEH
+   3643H: LD      HL,0FADEH
+   5ee9H: LD      HL,0FADEH
+
+Direct address 0fadfH. 1 references:
+------------------------------------
+
+   5eeeH: LD      DE,0FADFH
+
+Direct address 0fae4H. 5 references:
+------------------------------------
+
+   3419H: LD      HL,0FAE4H
+   34c4H: LD      HL,0FAE4H
+   34faH: LD      HL,0FAE4H
+   35beH: LD      HL,0FAE4H
+   360fH: LD      DE,0FAE4H
+
+Direct address 0faf0H. 1 references:
+------------------------------------
+
+   19eaH: LD      HL,0FAF0H
+
+Direct address 0fb2fH. 2 references:
+------------------------------------
+
+   5daaH: LD      DE,0FB2FH
+   5df5H: LD      DE,0FB2FH
+
+Direct address 0fb32H. 1 references:
+------------------------------------
+
+   5e3cH: LD      SP,(0FB32H)
+
+Direct address 0fb36H. 1 references:
+------------------------------------
+
+   5e34H: LD      DE,(0FB36H)
+
+Direct address 0fb38H. 1 references:
+------------------------------------
+
+   5e38H: LD      BC,(0FB38H)
+
+Direct address 0fb3aH. 1 references:
+------------------------------------
+
+   5dd0H: LD      HL,0FB3AH
+
+Direct address 0fb3bH. 2 references:
+------------------------------------
+
+   5da2H: LD      DE,0FB3BH
+   5dcbH: LD      HL,0FB3BH
+
+Direct address 0fb3cH. 2 references:
+------------------------------------
+
+   5c67H: LD      (0FB3CH),SP
+   5ca5H: LD      SP,(0FB3CH)
+
+Direct address 0fba0H. 1 references:
+------------------------------------
+
+   0041H: LD      DE,0FBA0H
+
+Direct address 0fba2H. 1 references:
+------------------------------------
+
+   5c6bH: LD      SP,0FBA2H
+
+Direct address 0fbaeH. 1 references:
+------------------------------------
+
+   5afbH: LD      HL,0FBAEH
+
+Direct address 0fbb0H. 2 references:
+------------------------------------
+
+   5ab4H: LD      HL,0FBB0H
+   5ac0H: LD      HL,0FBB0H
+
+Direct address 0fbd1H. 2 references:
+------------------------------------
+
+   5abaH: LD      HL,0FBD1H
+   5b0bH: LD      HL,0FBD1H
+
+Direct address 0fbd5H. 1 references:
+------------------------------------
+
+   0640H: LD      HL,0FBD5H
+
+Direct address 0fbdaH. 1 references:
+------------------------------------
+
+   143fH: LD      HL,0FBDAH
+
+Direct address 0fbf6H. 1 references:
+------------------------------------
+
+   44baH: LD      DE,(0FBF6H)
+
+Direct address 0fbf8H. 1 references:
+------------------------------------
+
+   47fcH: LD      (0FBF8H),DE
+
+Direct address 0fbfaH. 1 references:
+------------------------------------
+
+   00c3H: LD      DE,(0FBFAH)
+
+Direct address 0fbfeH. 3 references:
+------------------------------------
+
+   0049H: LD      HL,0FBFEH
+   07b4H: LD      HL,0FBFEH
+   0ca8H: LD      HL,0FBFEH
+
+Direct address 0fbffH. 2 references:
+------------------------------------
+
+   0721H: LD      DE,0FBFFH
+   07a4H: LD      DE,0FBFFH
+
+Direct address 0fd3dH. 3 references:
+------------------------------------
+
+   3279H: LD      HL,0FD3DH
+   38eeH: LD      HL,0FD3DH
+   3a1bH: LD      HL,0FD3DH
+
+Direct address 0fd3eH. 6 references:
+------------------------------------
+
+   1029H: LD      HL,0FD3EH
+   105aH: LD      HL,0FD3EH
+   1687H: LD      HL,0FD3EH
+   169bH: LD      BC,0FD3EH
+   33a8H: LD      DE,0FD3EH
+   39beH: LD      DE,0FD3EH
+
+Direct address 0fd43H. 1 references:
+------------------------------------
+
+   00d7H: LD      SP,0FD43H
+
+Direct address 0fe49H. 3 references:
+------------------------------------
+
+   0aeeH: LD      DE,0FE49H
+   0b40H: LD      HL,0FE49H
+   0b9fH: LD      DE,(0FE49H)
+
+Direct address 0fe53H. 1 references:
+------------------------------------
+
+   4186H: LD      DE,(0FE53H)
+
+Direct address 0fe54H. 1 references:
+------------------------------------
+
+   0cbbH: LD      HL,0FE54H
+
+Direct address 0fe55H. 3 references:
+------------------------------------
+
+   4183H: LD      HL,0FE55H
+   4765H: LD      HL,0FE55H
+   47afH: LD      HL,0FE55H
+
+Direct address 0fe64H. 1 references:
+------------------------------------
+
+   450eH: LD      HL,0FE64H
+
+Direct address 0fe72H. 1 references:
+------------------------------------
+
+   0cb5H: LD      HL,0FE72H
+
+Direct address 0fe73H. 3 references:
+------------------------------------
+
+   157eH: LD      DE,0FE73H
+   40e7H: LD      HL,0FE73H
+   4111H: LD      DE,0FE73H
+
+Direct address 0fe76H. 1 references:
+------------------------------------
+
+   4124H: LD      DE,0FE76H
+
+Direct address 0fe7eH. 1 references:
+------------------------------------
+
+   108aH: LD      (0FE7EH),DE
+
+Direct address 0fe82H. 1 references:
+------------------------------------
+
+   0c75H: LD      (0FE82H),DE
+
+Direct address 0fe88H. 1 references:
+------------------------------------
+
+   0d7fH: LD      DE,(0FE88H)
+
+Direct address 0fe8cH. 1 references:
+------------------------------------
+
+   0a40H: LD      (0FE8CH),SP
+
+Direct address 0fe90H. 2 references:
+------------------------------------
+
+   06aaH: LD      (0FE90H),DE
+   0b90H: LD      DE,(0FE90H)
+
+Direct address 0fe94H. 1 references:
+------------------------------------
+
+   0cebH: LD      (0FE94H),DE
+
+Direct address 0fe96H. 1 references:
+------------------------------------
+
+   05c3H: LD      HL,0FE96H
+
+Direct address 0fe99H. 1 references:
+------------------------------------
+
+   47f8H: LD      DE,(0FE99H)
+
+Direct address 0fea1H. 2 references:
+------------------------------------
+
+   41d9H: LD      DE,(0FEA1H)
+   4616H: LD      DE,(0FEA1H)
+
+Direct address 0fea5H. 2 references:
+------------------------------------
+
+   0b70H: LD      HL,0FEA5H
+   4733H: LD      HL,0FEA5H
+
+Direct address 0febfH. 3 references:
+------------------------------------
+
+   004eH: LD      HL,0FEBFH
+   1544H: LD      DE,0FEBFH
+   159bH: LD      HL,0FEBFH
+
+Direct address 0fec3H. 2 references:
+------------------------------------
+
+   1556H: LD      HL,0FEC3H
+   4540H: LD      DE,0FEC3H
+
+Direct address 0fed4H. 1 references:
+------------------------------------
+
+   00afH: LD      DE,0FED4H
+
+Direct address 0ff27H. 1 references:
+------------------------------------
+
+   4191H: LD      HL,0FF27H
+
+Direct address 0ff2bH. 2 references:
+------------------------------------
+
+   1510H: LD      HL,0FF2BH
+   1559H: LD      DE,0FF2BH
+
+Direct address 0ff50H. 1 references:
+------------------------------------
+
+   0475H: LD      HL,0FF50H
+
+Direct address 0ff90H. 1 references:
+------------------------------------
+
+   41a0H: LD      DE,(0FF90H)
+
+Direct address 0ff9aH. 2 references:
+------------------------------------
+
+   5685H: LD      HL,0FF9AH
+   56aaH: LD      HL,0FF9AH
+
+Direct address 0ffa2H. 3 references:
+------------------------------------
+
+   5158H: LD      HL,0FFA2H
+   516fH: LD      HL,0FFA2H
+   51d1H: LD      HL,0FFA2H
+
+Direct address 0ffa3H. 10 references:
+-------------------------------------
+
+   0917H: LD      HL,0FFA3H
+   0c98H: LD      DE,0FFA3H
+   1103H: LD      HL,0FFA3H
+   4e39H: LD      DE,0FFA3H
+   4fcfH: LD      HL,0FFA3H
+   5198H: LD      HL,0FFA3H
+   51adH: LD      DE,0FFA3H
+   51bfH: LD      DE,0FFA3H
+   52acH: LD      HL,0FFA3H
+   57d4H: LD      HL,0FFA3H
+
+Direct address 0ffa6H. 1 references:
+------------------------------------
+
+   4eefH: LD      HL,0FFA6H
+
+Direct address 0ffa7H. 9 references:
+------------------------------------
+
+   0911H: LD      HL,0FFA7H
+   0c91H: LD      DE,0FFA7H
+   10e8H: LD      HL,0FFA7H
+   1427H: LD      HL,0FFA7H
+   4b22H: LD      HL,0FFA7H
+   4c7fH: LD      HL,0FFA7H
+   4df1H: LD      HL,0FFA7H
+   4dfdH: LD      DE,0FFA7H
+   4e34H: LD      DE,0FFA7H
+
+Direct address 0ffa9H. 7 references:
+------------------------------------
+
+   4db4H: LD      HL,0FFA9H
+   4e10H: LD      HL,0FFA9H
+   4e49H: LD      HL,0FFA9H
+   4e8eH: LD      HL,0FFA9H
+   4fb9H: LD      HL,0FFA9H
+   5206H: LD      HL,0FFA9H
+   5246H: LD      HL,0FFA9H
+
+Direct address 0ffaaH. 11 references:
+-------------------------------------
+
+   4b82H: LD      HL,0FFAAH
+   4b8cH: LD      HL,0FFAAH
+   4d36H: LD      HL,0FFAAH
+   4d52H: LD      HL,0FFAAH
+   4d84H: LD      HL,0FFAAH
+   4d9bH: LD      HL,0FFAAH
+   4f66H: LD      HL,0FFAAH
+   4f7fH: LD      HL,0FFAAH
+   50f4H: LD      DE,0FFAAH
+   517dH: LD      HL,0FFAAH
+   52beH: LD      HL,0FFAAH
+
+Direct address 0ffabH. 3 references:
+------------------------------------
+
+   4bb6H: LD      HL,0FFABH
+   514aH: LD      HL,0FFABH
+   518dH: LD      HL,0FFABH
+
+Direct address 0ffacH. 1 references:
+------------------------------------
+
+   511cH: LD      HL,0FFACH
+
+Direct address 0ffadH. 9 references:
+------------------------------------
+
+   4e25H: LD      HL,0FFADH
+   4e2dH: LD      HL,0FFADH
+   4e77H: LD      HL,0FFADH
+   51aaH: LD      HL,0FFADH
+   51bcH: LD      HL,0FFADH
+   5261H: LD      HL,0FFADH
+   528aH: LD      HL,0FFADH
+   5298H: LD      HL,0FFADH
+   570dH: LD      HL,0FFADH
+
+Direct address 0ffb3H. 5 references:
+------------------------------------
+
+   4d44H: LD      HL,0FFB3H
+   50e4H: LD      HL,0FFB3H
+   5127H: LD      HL,0FFB3H
+   5a3bH: LD      HL,0FFB3H
+   5a5eH: LD      HL,0FFB3H
+
+Direct address 0ffb4H. 2 references:
+------------------------------------
+
+   4e7dH: LD      DE,0FFB4H
+   50ebH: LD      HL,0FFB4H
+
+Direct address 0ffb5H. 2 references:
+------------------------------------
+
+   5574H: LD      HL,0FFB5H
+   58ddH: LD      DE,0FFB5H
+
+Direct address 0ffb6H. 3 references:
+------------------------------------
+
+   549bH: LD      HL,0FFB6H
+   54e2H: LD      HL,0FFB6H
+   5541H: LD      HL,0FFB6H
+
+Direct address 0ffc1H. 1 references:
+------------------------------------
+
+   1b2aH: LD      DE,0FFC1H
+
+Direct address 0ffd0H. 3 references:
+------------------------------------
+
+   5287H: LD      DE,0FFD0H
+   5295H: LD      DE,0FFD0H
+   52b4H: LD      HL,0FFD0H
+
+Direct address 0ffd6H. 1 references:
+------------------------------------
+
+   52ccH: LD      DE,0FFD6H
+
+Direct address 0ffd7H. 1 references:
+------------------------------------
+
+   5282H: LD      HL,0FFD7H
+
+Direct address 0ffe0H. 2 references:
+------------------------------------
+
+   25e3H: LD      BC,0FFE0H
+   2633H: LD      DE,0FFE0H
+
+Direct address 0ffefH. 1 references:
+------------------------------------
+
+   00bfH: LD      DE,0FFEFH
+
+Direct address 0fff4H. 1 references:
+------------------------------------
+
+   5d9aH: LD      DE,0FFF4H
+
+Direct address 0fff6H. 2 references:
+------------------------------------
+
+   2cf7H: LD      HL,0FFF6H
+   47b5H: LD      HL,0FFF6H
+
+Direct address 0fff7H. 1 references:
+------------------------------------
+
+   3002H: LD      BC,0FFF7H
+
+Direct address 0fff8H. 1 references:
+------------------------------------
+
+   14c2H: LD      HL,0FFF8H
+
+Direct address 0fff9H. 1 references:
+------------------------------------
+
+   18b4H: LD      HL,0FFF9H
+
+Direct address 0fffaH. 2 references:
+------------------------------------
+
+   06b5H: LD      DE,0FFFAH
+   3695H: LD      BC,0FFFAH
+
+Direct address 0fffeH. 1 references:
+------------------------------------
+
+   060bH: LD      DE,0FFFEH
+
+Direct address 0ffffH. 4 references:
+------------------------------------
+
+   063aH: LD      HL,0FFFFH
+   164eH: LD      HL,0FFFFH
+   3da4H: LD      HL,0FFFFH
+   5cadH: LD      HL,0FFFFH
+
+
+Indirect address Reference (900 entries)
+----------------------------------------
+
+Indirect address 6002H. 1 references:
+-------------------------------------
+
+   0069H: LD      HL,(6002H)
+
+Indirect address 68c2H. 6 references:
+-------------------------------------
+
+   0d35H: LD      A,(68C2H)
+   17faH: LD      A,(68C2H)
+   3cb2H: LD      A,(68C2H)
+   3ccbH: LD      A,(68C2H)
+   3ce2H: LD      A,(68C2H)
+   3cfaH: LD      A,(68C2H)
+
+Indirect address 7a28H. 1 references:
+-------------------------------------
+
+   044fH: LD      (7A28H),A
+
+Indirect address 0b395H. 1 references:
+--------------------------------------
+
+   04c8H: LD      (0B395H),HL
+
+Indirect address 0c400H. 1 references:
+--------------------------------------
+
+   19c8H: LD      (0C400H),HL
+
+Indirect address 0c692H. 4 references:
+--------------------------------------
+
+   00a0H: LD      (0C692H),A
+   00a3H: LD      A,(0C692H)
+   1d37H: LD      A,(0C692H)
+   1e3dH: LD      (0C692H),A
+
+Indirect address 0c695H. 8 references:
+--------------------------------------
+
+   1e4eH: LD      (0C695H),A
+   206aH: LD      A,(0C695H)
+   2101H: LD      A,(0C695H)
+   219bH: LD      A,(0C695H)
+   21adH: LD      (0C695H),A
+   21b9H: LD      A,(0C695H)
+   2c4aH: LD      A,(0C695H)
+   2c7aH: LD      A,(0C695H)
+
+Indirect address 0c696H. 9 references:
+--------------------------------------
+
+   1d3dH: LD      A,(0C696H)
+   20e4H: LD      A,(0C696H)
+   2118H: LD      HL,(0C696H)
+   2167H: LD      (0C696H),A
+   217bH: LD      A,(0C696H)
+   2bf6H: LD      HL,(0C696H)
+   2c4eH: LD      A,(0C696H)
+   2c82H: LD      A,(0C696H)
+   2c97H: LD      A,(0C696H)
+
+Indirect address 0c697H. 5 references:
+--------------------------------------
+
+   1e41H: LD      (0C697H),A
+   1e9aH: LD      (0C697H),A
+   1f06H: LD      A,(0C697H)
+   2206H: LD      A,(0C697H)
+   293aH: LD      A,(0C697H)
+
+Indirect address 0c698H. 15 references:
+---------------------------------------
+
+   1e81H: LD      (0C698H),A
+   1f31H: LD      A,(0C698H)
+   20f4H: LD      A,(0C698H)
+   21c1H: LD      (0C698H),A
+   21d8H: LD      A,(0C698H)
+   224dH: LD      A,(0C698H)
+   2256H: LD      (0C698H),A
+   225eH: LD      (0C698H),A
+   2369H: LD      A,(0C698H)
+   261dH: LD      A,(0C698H)
+   263fH: LD      A,(0C698H)
+   274aH: LD      A,(0C698H)
+   2c0aH: LD      A,(0C698H)
+   2c8eH: LD      A,(0C698H)
+   2c9fH: LD      A,(0C698H)
+
+Indirect address 0c699H. 9 references:
+--------------------------------------
+
+   1e7eH: LD      (0C699H),A
+   1f28H: LD      A,(0C699H)
+   20d2H: LD      A,(0C699H)
+   20e0H: LD      (0C699H),A
+   2265H: LD      A,(0C699H)
+   24d9H: LD      A,(0C699H)
+   2bcfH: LD      (0C699H),A
+   3d6bH: LD      A,(0C699H)
+   3dceH: LD      A,(0C699H)
+
+Indirect address 0c69aH. 6 references:
+--------------------------------------
+
+   1e54H: LD      (0C69AH),A
+   1f37H: LD      A,(0C69AH)
+   1f76H: LD      A,(0C69AH)
+   2492H: LD      A,(0C69AH)
+   2bdfH: LD      (0C69AH),A
+   3d66H: LD      A,(0C69AH)
+
+Indirect address 0c69bH. 4 references:
+--------------------------------------
+
+   1e57H: LD      (0C69BH),A
+   215aH: LD      A,(0C69BH)
+   242dH: LD      A,(0C69BH)
+   24efH: LD      A,(0C69BH)
+
+Indirect address 0c6a8H. 4 references:
+--------------------------------------
+
+   1e72H: LD      (0C6A8H),HL
+   210cH: LD      HL,(0C6A8H)
+   2b1eH: LD      HL,(0C6A8H)
+   2bafH: LD      (0C6A8H),HL
+
+Indirect address 0c6aaH. 15 references:
+---------------------------------------
+
+   1e76H: LD      (0C6AAH),HL
+   213eH: LD      HL,(0C6AAH)
+   2145H: LD      (0C6AAH),HL
+   214cH: LD      (0C6AAH),HL
+   2bbcH: LD      (0C6AAH),HL
+   375eH: LD      A,(0C6AAH)
+   3774H: LD      HL,(0C6AAH)
+   3794H: LD      A,(0C6AAH)
+   37c7H: LD      A,(0C6AAH)
+   37efH: LD      A,(0C6AAH)
+   37f9H: LD      HL,(0C6AAH)
+   3ba8H: LD      A,(0C6AAH)
+   3c35H: LD      HL,(0C6AAH)
+   3c3bH: LD      (0C6AAH),A
+   3c46H: LD      (0C6AAH),HL
+
+Indirect address 0c6abH. 6 references:
+--------------------------------------
+
+   2b81H: LD      A,(0C6ABH)
+   374eH: LD      A,(0C6ABH)
+   3798H: LD      A,(0C6ABH)
+   37cbH: LD      A,(0C6ABH)
+   39a9H: LD      A,(0C6ABH)
+   3c2dH: LD      A,(0C6ABH)
+
+Indirect address 0c6acH. 6 references:
+--------------------------------------
+
+   1e5aH: LD      (0C6ACH),A
+   1e6cH: LD      (0C6ACH),A
+   2022H: LD      A,(0C6ACH)
+   2348H: LD      A,(0C6ACH)
+   2b62H: LD      (0C6ACH),A
+   2b9cH: LD      A,(0C6ACH)
+
+Indirect address 0c6adH. 5 references:
+--------------------------------------
+
+   1e5dH: LD      (0C6ADH),A
+   201bH: LD      (0C6ADH),A
+   2026H: LD      A,(0C6ADH)
+   203cH: LD      (0C6ADH),A
+   204eH: LD      (0C6ADH),A
+
+Indirect address 0c6aeH. 17 references:
+---------------------------------------
+
+   13f9H: LD      A,(0C6AEH)
+   1e0dH: LD      HL,(0C6AEH)
+   1eaeH: LD      HL,(0C6AEH)
+   1eb1H: LD      (0C6AEH),HL
+   2b7dH: LD      A,(0C6AEH)
+   2b87H: LD      HL,(0C6AEH)
+   3726H: LD      HL,(0C6AEH)
+   377fH: LD      HL,(0C6AEH)
+   3883H: LD      HL,(0C6AEH)
+   38a4H: LD      HL,(0C6AEH)
+   38beH: LD      HL,(0C6AEH)
+   392cH: LD      HL,(0C6AEH)
+   399fH: LD      HL,(0C6AEH)
+   3a6cH: LD      HL,(0C6AEH)
+   3b8eH: LD      HL,(0C6AEH)
+   3b9aH: LD      HL,(0C6AEH)
+   3c5aH: LD      HL,(0C6AEH)
+
+Indirect address 0c6afH. 5 references:
+--------------------------------------
+
+   0e50H: LD      A,(0C6AFH)
+   0e7bH: LD      A,(0C6AFH)
+   0ea9H: LD      A,(0C6AFH)
+   1402H: LD      A,(0C6AFH)
+   3270H: LD      A,(0C6AFH)
+
+Indirect address 0c6b0H. 5 references:
+--------------------------------------
+
+   19f9H: LD      (0C6B0H),HL
+   1de2H: LD      HL,(0C6B0H)
+   1e93H: LD      (0C6B0H),HL
+   1eb8H: LD      (0C6B0H),HL
+   1edeH: LD      HL,(0C6B0H)
+
+Indirect address 0c6b1H. 2 references:
+--------------------------------------
+
+   1bebH: LD      A,(0C6B1H)
+   1fe6H: LD      A,(0C6B1H)
+
+Indirect address 0c6b2H. 18 references:
+---------------------------------------
+
+   213bH: LD      (0C6B2H),A
+   2afcH: LD      A,(0C6B2H)
+   376bH: LD      A,(0C6B2H)
+   3786H: LD      A,(0C6B2H)
+   3891H: LD      A,(0C6B2H)
+   3994H: LD      A,(0C6B2H)
+   39edH: LD      A,(0C6B2H)
+   3a39H: LD      A,(0C6B2H)
+   3a85H: LD      A,(0C6B2H)
+   3a99H: LD      A,(0C6B2H)
+   3abaH: LD      A,(0C6B2H)
+   3ae1H: LD      A,(0C6B2H)
+   3b38H: LD      A,(0C6B2H)
+   3ba1H: LD      A,(0C6B2H)
+   3bf4H: LD      A,(0C6B2H)
+   3c05H: LD      A,(0C6B2H)
+   3c21H: LD      A,(0C6B2H)
+   3c8fH: LD      A,(0C6B2H)
+
+Indirect address 0c6b3H. 7 references:
+--------------------------------------
+
+   1e49H: LD      (0C6B3H),A
+   39feH: LD      A,(0C6B3H)
+   3a54H: LD      A,(0C6B3H)
+   3a8dH: LD      A,(0C6B3H)
+   3b30H: LD      A,(0C6B3H)
+   3be9H: LD      A,(0C6B3H)
+   3c0dH: LD      A,(0C6B3H)
+
+Indirect address 0c6b4H. 6 references:
+--------------------------------------
+
+   26aaH: LD      (0C6B4H),HL
+   3d43H: LD      HL,(0C6B4H)
+   3d4cH: LD      (0C6B4H),HL
+   3d98H: LD      HL,(0C6B4H)
+   3db7H: LD      (0C6B4H),HL
+   3e83H: LD      HL,(0C6B4H)
+
+Indirect address 0c6b6H. 6 references:
+--------------------------------------
+
+   26adH: LD      (0C6B6H),HL
+   3d54H: LD      HL,(0C6B6H)
+   3d5dH: LD      (0C6B6H),HL
+   3d94H: LD      HL,(0C6B6H)
+   3dbbH: LD      (0C6B6H),HL
+   3e89H: LD      HL,(0C6B6H)
+
+Indirect address 0c6b8H. 19 references:
+---------------------------------------
+
+   1f69H: LD      (0C6B8H),A
+   23dbH: LD      (0C6B8H),A
+   23f7H: LD      (0C6B8H),A
+   2543H: LD      A,(0C6B8H)
+   25adH: LD      A,(0C6B8H)
+   25bbH: LD      (0C6B8H),A
+   25bfH: LD      A,(0C6B8H)
+   25c7H: LD      A,(0C6B8H)
+   25ebH: LD      A,(0C6B8H)
+   25faH: LD      A,(0C6B8H)
+   2606H: LD      A,(0C6B8H)
+   260eH: LD      A,(0C6B8H)
+   2624H: LD      A,(0C6B8H)
+   262fH: LD      (0C6B8H),A
+   2646H: LD      A,(0C6B8H)
+   2652H: LD      (0C6B8H),A
+   266fH: LD      A,(0C6B8H)
+   2698H: LD      A,(0C6B8H)
+   26e9H: LD      A,(0C6B8H)
+
+Indirect address 0c6b9H. 22 references:
+---------------------------------------
+
+   1f72H: LD      (0C6B9H),HL
+   23fdH: LD      (0C6B9H),HL
+   2484H: LD      HL,(0C6B9H)
+   2499H: LD      HL,(0C6B9H)
+   24bbH: LD      HL,(0C6B9H)
+   2546H: LD      HL,(0C6B9H)
+   259cH: LD      (0C6B9H),HL
+   25a5H: LD      HL,(0C6B9H)
+   25a9H: LD      (0C6B9H),HL
+   25b4H: LD      HL,(0C6B9H)
+   25b8H: LD      (0C6B9H),HL
+   25cfH: LD      HL,(0C6B9H)
+   25e8H: LD      (0C6B9H),HL
+   25f2H: LD      HL,(0C6B9H)
+   25f6H: LD      (0C6B9H),HL
+   2636H: LD      HL,(0C6B9H)
+   263aH: LD      (0C6B9H),HL
+   265dH: LD      HL,(0C6B9H)
+   2680H: LD      HL,(0C6B9H)
+   26f0H: LD      HL,(0C6B9H)
+   2728H: LD      HL,(0C6B9H)
+   2741H: LD      HL,(0C6B9H)
+
+Indirect address 0c6baH. 1 references:
+--------------------------------------
+
+   2487H: LD      A,(0C6BAH)
+
+Indirect address 0c706H. 2 references:
+--------------------------------------
+
+   2185H: LD      A,(0C706H)
+   2ca2H: LD      (0C706H),A
+
+Indirect address 0c73cH. 1 references:
+--------------------------------------
+
+   0071H: LD      (0C73CH),A
+
+Indirect address 0ccecH. 2 references:
+--------------------------------------
+
+   0d44H: LD      HL,(0CCECH)
+   0d4eH: LD      (0CCECH),HL
+
+Indirect address 0ccf1H. 1 references:
+--------------------------------------
+
+   0d47H: LD      (0CCF1H),HL
+
+Indirect address 0d500H. 1 references:
+--------------------------------------
+
+   34edH: LD      A,(0D500H)
+
+Indirect address 0d516H. 1 references:
+--------------------------------------
+
+   3d36H: LD      HL,(0D516H)
+
+Indirect address 0db7eH. 1 references:
+--------------------------------------
+
+   5ba6H: LD      (0DB7EH),HL
+
+Indirect address 0f506H. 1 references:
+--------------------------------------
+
+   3cc6H: LD      A,(0F506H)
+
+Indirect address 0fa00H. 8 references:
+--------------------------------------
+
+   2043H: LD      A,(0FA00H)
+   205fH: LD      A,(0FA00H)
+   2b0aH: LD      A,(0FA00H)
+   2b2dH: LD      A,(0FA00H)
+   2ba0H: LD      A,(0FA00H)
+   37fcH: LD      A,(0FA00H)
+   3ac2H: LD      A,(0FA00H)
+   3c3eH: LD      A,(0FA00H)
+
+Indirect address 0fa01H. 2 references:
+--------------------------------------
+
+   1b8bH: LD      A,(0FA01H)
+   2b72H: LD      (0FA01H),A
+
+Indirect address 0fa03H. 2 references:
+--------------------------------------
+
+   3ee2H: LD      (0FA03H),HL
+   3ef5H: LD      (0FA03H),HL
+
+Indirect address 0fa06H. 2 references:
+--------------------------------------
+
+   3ee8H: LD      (0FA06H),HL
+   3eefH: LD      (0FA06H),HL
+
+Indirect address 0fa08H. 1 references:
+--------------------------------------
+
+   3711H: LD      HL,(0FA08H)
+
+Indirect address 0fa1cH. 1 references:
+--------------------------------------
+
+   1a4eH: LD      (0FA1CH),A
+
+Indirect address 0fa71H. 5 references:
+--------------------------------------
+
+   0ec9H: LD      (0FA71H),A
+   0f41H: LD      (0FA71H),A
+   0f4dH: LD      (0FA71H),A
+   0f65H: LD      (0FA71H),A
+   102eH: LD      A,(0FA71H)
+
+Indirect address 0fa72H. 4 references:
+--------------------------------------
+
+   1ebeH: LD      A,(0FA72H)
+   1ec8H: LD      A,(0FA72H)
+   1ed7H: LD      A,(0FA72H)
+   1edbH: LD      (0FA72H),A
+
+Indirect address 0fa73H. 2 references:
+--------------------------------------
+
+   283dH: LD      (0FA73H),A
+   324dH: LD      A,(0FA73H)
+
+Indirect address 0fa74H. 3 references:
+--------------------------------------
+
+   1a2aH: LD      (0FA74H),A
+   1a49H: LD      (0FA74H),A
+   1a6eH: LD      A,(0FA74H)
+
+Indirect address 0fa75H. 2 references:
+--------------------------------------
+
+   1a54H: LD      (0FA75H),A
+   5fdbH: LD      (0FA75H),A
+
+Indirect address 0fa78H. 1 references:
+--------------------------------------
+
+   1a88H: LD      (0FA78H),A
+
+Indirect address 0fa79H. 2 references:
+--------------------------------------
+
+   1a74H: LD      A,(0FA79H)
+   1aaaH: LD      (0FA79H),A
+
+Indirect address 0fa7aH. 6 references:
+--------------------------------------
+
+   1aa7H: LD      A,(0FA7AH)
+   1af6H: LD      A,(0FA7AH)
+   1b23H: LD      A,(0FA7AH)
+   1b5aH: LD      A,(0FA7AH)
+   202eH: LD      A,(0FA7AH)
+   5fd1H: LD      A,(0FA7AH)
+
+Indirect address 0fa7fH. 2 references:
+--------------------------------------
+
+   2942H: LD      A,(0FA7FH)
+   2947H: LD      (0FA7FH),A
+
+Indirect address 0fa96H. 1 references:
+--------------------------------------
+
+   26bdH: LD      (0FA96H),A
+
+Indirect address 0faa5H. 4 references:
+--------------------------------------
+
+   2cf4H: LD      (0FAA5H),A
+   2ddcH: LD      A,(0FAA5H)
+   2e1eH: LD      A,(0FAA5H)
+   2e22H: LD      (0FAA5H),A
+
+Indirect address 0faa6H. 3 references:
+--------------------------------------
+
+   2cfbH: LD      (0FAA6H),HL
+   2d76H: LD      HL,(0FAA6H)
+   2da7H: LD      HL,(0FAA6H)
+
+Indirect address 0faa8H. 6 references:
+--------------------------------------
+
+   2d3eH: LD      (0FAA8H),A
+   2d4dH: LD      (0FAA8H),A
+   2d90H: LD      A,(0FAA8H)
+   2e08H: LD      A,(0FAA8H)
+   2e30H: LD      A,(0FAA8H)
+   2e3eH: LD      A,(0FAA8H)
+
+Indirect address 0faa9H. 2 references:
+--------------------------------------
+
+   2f34H: LD      (0FAA9H),A
+   304eH: LD      A,(0FAA9H)
+
+Indirect address 0faabH. 4 references:
+--------------------------------------
+
+   2d5fH: LD      (0FAABH),A
+   2d87H: LD      A,(0FAABH)
+   2d96H: LD      A,(0FAABH)
+   32ebH: LD      (0FAABH),A
+
+Indirect address 0faacH. 5 references:
+--------------------------------------
+
+   32f4H: LD      (0FAACH),HL
+   334cH: LD      HL,(0FAACH)
+   3351H: LD      (0FAACH),HL
+   3365H: LD      HL,(0FAACH)
+   3369H: LD      (0FAACH),HL
+
+Indirect address 0faaeH. 2 references:
+--------------------------------------
+
+   2a0aH: LD      (0FAAEH),A
+   2aa5H: LD      A,(0FAAEH)
+
+Indirect address 0faafH. 4 references:
+--------------------------------------
+
+   1cf1H: LD      A,(0FAAFH)
+   2964H: LD      (0FAAFH),HL
+   2a85H: LD      A,(0FAAFH)
+   2aa1H: LD      (0FAAFH),A
+
+Indirect address 0fab1H. 14 references:
+---------------------------------------
+
+   3779H: LD      (0FAB1H),HL
+   37a3H: LD      A,(0FAB1H)
+   37b3H: LD      (0FAB1H),A
+   37d6H: LD      A,(0FAB1H)
+   37e5H: LD      (0FAB1H),A
+   3830H: LD      (0FAB1H),A
+   388eH: LD      (0FAB1H),HL
+   38a7H: LD      (0FAB1H),HL
+   38baH: LD      HL,(0FAB1H)
+   38c9H: LD      (0FAB1H),HL
+   39c3H: LD      A,(0FAB1H)
+   39cbH: LD      HL,(0FAB1H)
+   3a7aH: LD      A,(0FAB1H)
+   3aefH: LD      A,(0FAB1H)
+
+Indirect address 0fab2H. 1 references:
+--------------------------------------
+
+   3833H: LD      (0FAB2H),A
+
+Indirect address 0fab3H. 9 references:
+--------------------------------------
+
+   3836H: LD      (0FAB3H),A
+   38abH: LD      (0FAB3H),A
+   38ccH: LD      A,(0FAB3H)
+   38d3H: LD      (0FAB3H),A
+   39d5H: LD      A,(0FAB3H)
+   39d9H: LD      (0FAB3H),A
+   3af5H: LD      A,(0FAB3H)
+   3afbH: LD      (0FAB3H),A
+   3bb5H: LD      A,(0FAB3H)
+
+Indirect address 0fab5H. 6 references:
+--------------------------------------
+
+   1e51H: LD      (0FAB5H),A
+   390dH: LD      (0FAB5H),A
+   3a41H: LD      A,(0FAB5H)
+   3a62H: LD      A,(0FAB5H)
+   3a66H: LD      (0FAB5H),A
+   3a70H: LD      A,(0FAB5H)
+
+Indirect address 0fab9H. 7 references:
+--------------------------------------
+
+   227dH: LD      A,(0FAB9H)
+   22f3H: LD      A,(0FAB9H)
+   2434H: LD      (0FAB9H),A
+   2473H: LD      A,(0FAB9H)
+   24d0H: LD      A,(0FAB9H)
+   2584H: LD      A,(0FAB9H)
+   2762H: LD      A,(0FAB9H)
+
+Indirect address 0fabaH. 9 references:
+--------------------------------------
+
+   3d4fH: LD      (0FABAH),HL
+   3d90H: LD      HL,(0FABAH)
+   3dbfH: LD      (0FABAH),HL
+   3defH: LD      HL,(0FABAH)
+   3e1bH: LD      HL,(0FABAH)
+   3e1fH: LD      (0FABAH),HL
+   3e86H: LD      (0FABAH),HL
+   3ea9H: LD      HL,(0FABAH)
+   3eb3H: LD      (0FABAH),HL
+
+Indirect address 0fabcH. 10 references:
+---------------------------------------
+
+   3d60H: LD      (0FABCH),HL
+   3d8cH: LD      HL,(0FABCH)
+   3dc3H: LD      (0FABCH),HL
+   3e01H: LD      HL,(0FABCH)
+   3e0dH: LD      HL,(0FABCH)
+   3e11H: LD      (0FABCH),HL
+   3e8cH: LD      (0FABCH),HL
+   3e94H: LD      HL,(0FABCH)
+   3e9eH: LD      (0FABCH),HL
+   3ea6H: LD      (0FABCH),HL
+
+Indirect address 0fabeH. 2 references:
+--------------------------------------
+
+   3f02H: LD      (0FABEH),HL
+   3f22H: LD      HL,(0FABEH)
+
+Indirect address 0fac0H. 3 references:
+--------------------------------------
+
+   3edeH: LD      (0FAC0H),HL
+   3ef9H: LD      (0FAC0H),HL
+   3f1dH: LD      HL,(0FAC0H)
+
+Indirect address 0fac2H. 2 references:
+--------------------------------------
+
+   3f8aH: LD      HL,(0FAC2H)
+   3fd0H: LD      (0FAC2H),A
+
+Indirect address 0fac3H. 3 references:
+--------------------------------------
+
+   3f80H: LD      A,(0FAC3H)
+   3fb5H: LD      (0FAC3H),A
+   3fd7H: LD      (0FAC3H),A
+
+Indirect address 0fac4H. 2 references:
+--------------------------------------
+
+   3f86H: LD      HL,(0FAC4H)
+   3fcdH: LD      (0FAC4H),HL
+
+Indirect address 0fac6H. 1 references:
+--------------------------------------
+
+   3f8eH: LD      HL,(0FAC6H)
+
+Indirect address 0fac8H. 5 references:
+--------------------------------------
+
+   3f9aH: LD      (0FAC8H),A
+   3fd3H: LD      A,(0FAC8H)
+   400aH: LD      A,(0FAC8H)
+   4028H: LD      A,(0FAC8H)
+   403bH: LD      A,(0FAC8H)
+
+Indirect address 0fac9H. 5 references:
+--------------------------------------
+
+   26ecH: LD      (0FAC9H),A
+   3fe5H: LD      A,(0FAC9H)
+   4006H: LD      A,(0FAC9H)
+   4065H: LD      A,(0FAC9H)
+   4070H: LD      (0FAC9H),A
+
+Indirect address 0facaH. 5 references:
+--------------------------------------
+
+   26f3H: LD      (0FACAH),HL
+   3fe2H: LD      HL,(0FACAH)
+   4003H: LD      HL,(0FACAH)
+   4062H: LD      HL,(0FACAH)
+   406dH: LD      (0FACAH),HL
+
+Indirect address 0faccH. 2 references:
+--------------------------------------
+
+   3fdaH: LD      HL,(0FACCH)
+   4053H: LD      (0FACCH),HL
+
+Indirect address 0faceH. 1 references:
+--------------------------------------
+
+   3febH: LD      HL,(0FACEH)
+
+Indirect address 0fad0H. 2 references:
+--------------------------------------
+
+   4032H: LD      A,(0FAD0H)
+   4077H: LD      (0FAD0H),A
+
+Indirect address 0fad1H. 2 references:
+--------------------------------------
+
+   4036H: LD      A,(0FAD1H)
+   4059H: LD      (0FAD1H),A
+
+Indirect address 0fad2H. 3 references:
+--------------------------------------
+
+   26ccH: LD      (0FAD2H),A
+   275aH: LD      A,(0FAD2H)
+   3f42H: LD      A,(0FAD2H)
+
+Indirect address 0fad3H. 1 references:
+--------------------------------------
+
+   26c2H: LD      (0FAD3H),A
+
+Indirect address 0fad4H. 2 references:
+--------------------------------------
+
+   2078H: LD      (0FAD4H),A
+   2092H: LD      A,(0FAD4H)
+
+Indirect address 0fad5H. 4 references:
+--------------------------------------
+
+   205cH: LD      (0FAD5H),A
+   2087H: LD      A,(0FAD5H)
+   20bbH: LD      A,(0FAD5H)
+   20bfH: LD      (0FAD5H),A
+
+Indirect address 0fad6H. 3 references:
+--------------------------------------
+
+   2056H: LD      (0FAD6H),A
+   20c2H: LD      A,(0FAD6H)
+   20c6H: LD      (0FAD6H),A
+
+Indirect address 0fad7H. 9 references:
+--------------------------------------
+
+   0671H: LD      (0FAD7H),A
+   1d5eH: LD      A,(0FAD7H)
+   1d64H: LD      (0FAD7H),A
+   1d84H: LD      (0FAD7H),A
+   1d93H: LD      (0FAD7H),A
+   1d97H: LD      (0FAD7H),A
+   28a4H: LD      (0FAD7H),A
+   2dd5H: LD      A,(0FAD7H)
+   5fe1H: LD      (0FAD7H),A
+
+Indirect address 0fad8H. 3 references:
+--------------------------------------
+
+   359dH: LD      HL,(0FAD8H)
+   5eacH: LD      HL,(0FAD8H)
+   5edbH: LD      (0FAD8H),HL
+
+Indirect address 0fadaH. 3 references:
+--------------------------------------
+
+   3599H: LD      HL,(0FADAH)
+   5ea4H: LD      HL,(0FADAH)
+   5ed4H: LD      (0FADAH),HL
+
+Indirect address 0fadcH. 1 references:
+--------------------------------------
+
+   5ed8H: LD      (0FADCH),HL
+
+Indirect address 0fadeH. 1 references:
+--------------------------------------
+
+   348fH: LD      (0FADEH),A
+
+Indirect address 0faeaH. 6 references:
+--------------------------------------
+
+   28b4H: LD      A,(0FAEAH)
+   340eH: LD      (0FAEAH),A
+   34c1H: LD      (0FAEAH),A
+   3513H: LD      (0FAEAH),A
+   3526H: LD      (0FAEAH),A
+   366aH: LD      (0FAEAH),A
+
+Indirect address 0faebH. 8 references:
+--------------------------------------
+
+   288cH: LD      A,(0FAEBH)
+   3406H: LD      (0FAEBH),A
+   3434H: LD      (0FAEBH),A
+   345dH: LD      (0FAEBH),A
+   34f1H: LD      A,(0FAEBH)
+   3510H: LD      (0FAEBH),A
+   5e8fH: LD      (0FAEBH),A
+   5eb8H: LD      (0FAEBH),A
+
+Indirect address 0faecH. 2 references:
+--------------------------------------
+
+   33dcH: LD      (0FAECH),HL
+   3654H: LD      HL,(0FAECH)
+
+Indirect address 0faeeH. 2 references:
+--------------------------------------
+
+   007aH: LD      HL,(0FAEEH)
+   19cfH: LD      (0FAEEH),HL
+
+Indirect address 0fb23H. 4 references:
+--------------------------------------
+
+   1d70H: LD      A,(0FB23H)
+   289dH: LD      A,(0FB23H)
+   5c5eH: LD      (0FB23H),A
+   5caaH: LD      (0FB23H),A
+
+Indirect address 0fb30H. 1 references:
+--------------------------------------
+
+   5e44H: LD      HL,(0FB30H)
+
+Indirect address 0fb34H. 1 references:
+--------------------------------------
+
+   5e40H: LD      HL,(0FB34H)
+
+Indirect address 0fb3aH. 1 references:
+--------------------------------------
+
+   5e2cH: LD      HL,(0FB3AH)
+
+Indirect address 0fba1H. 1 references:
+--------------------------------------
+
+   4ce0H: LD      (0FBA1H),A
+
+Indirect address 0fba5H. 1 references:
+--------------------------------------
+
+   4cdbH: LD      (0FBA5H),A
+
+Indirect address 0fba9H. 1 references:
+--------------------------------------
+
+   4cd6H: LD      (0FBA9H),A
+
+Indirect address 0fbacH. 5 references:
+--------------------------------------
+
+   4ce9H: LD      (0FBACH),A
+   4cf7H: LD      (0FBACH),A
+   4d08H: LD      A,(0FBACH)
+   4d29H: LD      A,(0FBACH)
+   4d2dH: LD      (0FBACH),A
+
+Indirect address 0fbafH. 2 references:
+--------------------------------------
+
+   5ad5H: LD      A,(0FBAFH)
+   5ae0H: LD      (0FBAFH),A
+
+Indirect address 0fbeeH. 4 references:
+--------------------------------------
+
+   05a4H: LD      (0FBEEH),A
+   0632H: LD      A,(0FBEEH)
+   0cf6H: LD      A,(0FBEEH)
+   1242H: LD      A,(0FBEEH)
+
+Indirect address 0fbf0H. 10 references:
+---------------------------------------
+
+   0e41H: LD      A,(0FBF0H)
+   0e6fH: LD      A,(0FBF0H)
+   0ea4H: LD      A,(0FBF0H)
+   13f2H: LD      A,(0FBF0H)
+   3224H: LD      A,(0FBF0H)
+   3235H: LD      A,(0FBF0H)
+   323dH: LD      (0FBF0H),A
+   3248H: LD      A,(0FBF0H)
+   325dH: LD      (0FBF0H),A
+   328cH: LD      (0FBF0H),A
+
+Indirect address 0fbf1H. 10 references:
+---------------------------------------
+
+   0dfcH: LD      (0FBF1H),A
+   0e37H: LD      A,(0FBF1H)
+   0e69H: LD      A,(0FBF1H)
+   0e9dH: LD      A,(0FBF1H)
+   0ebeH: LD      A,(0FBF1H)
+   0ec6H: LD      (0FBF1H),A
+   1646H: LD      (0FBF1H),A
+   320aH: LD      A,(0FBF1H)
+   3245H: LD      (0FBF1H),A
+   3286H: LD      A,(0FBF1H)
+
+Indirect address 0fbf2H. 1 references:
+--------------------------------------
+
+   0e49H: LD      A,(0FBF2H)
+
+Indirect address 0fbf3H. 1 references:
+--------------------------------------
+
+   0e77H: LD      A,(0FBF3H)
+
+Indirect address 0fbf5H. 1 references:
+--------------------------------------
+
+   3676H: LD      A,(0FBF5H)
+
+Indirect address 0fbf6H. 6 references:
+--------------------------------------
+
+   00b6H: LD      (0FBF6H),HL
+   00bcH: LD      HL,(0FBF6H)
+   4151H: LD      HL,(0FBF6H)
+   4700H: LD      HL,(0FBF6H)
+   475aH: LD      HL,(0FBF6H)
+   48baH: LD      (0FBF6H),HL
+
+Indirect address 0fbf8H. 16 references:
+---------------------------------------
+
+   0546H: LD      HL,(0FBF8H)
+   055cH: LD      (0FBF8H),HL
+   058aH: LD      HL,(0FBF8H)
+   063dH: LD      (0FBF8H),HL
+   09daH: LD      HL,(0FBF8H)
+   0a59H: LD      (0FBF8H),HL
+   0bebH: LD      HL,(0FBF8H)
+   0c11H: LD      HL,(0FBF8H)
+   0c42H: LD      (0FBF8H),HL
+   15cbH: LD      HL,(0FBF8H)
+   1651H: LD      (0FBF8H),HL
+   1b4bH: LD      HL,(0FBF8H)
+   47b9H: LD      HL,(0FBF8H)
+   492fH: LD      (0FBF8H),HL
+   5c64H: LD      (0FBF8H),HL
+   5cb0H: LD      (0FBF8H),HL
+
+Indirect address 0fbfaH. 11 references:
+---------------------------------------
+
+   007dH: LD      (0FBFAH),HL
+   073bH: LD      HL,(0FBFAH)
+   077dH: LD      HL,(0FBFAH)
+   18f3H: LD      HL,(0FBFAH)
+   19d2H: LD      (0FBFAH),HL
+   33dfH: LD      HL,(0FBFAH)
+   343cH: LD      HL,(0FBFAH)
+   3450H: LD      HL,(0FBFAH)
+   470fH: LD      HL,(0FBFAH)
+   472aH: LD      HL,(0FBFAH)
+   478aH: LD      HL,(0FBFAH)
+
+Indirect address 0fbfcH. 4 references:
+--------------------------------------
+
+   0579H: LD      HL,(0FBFCH)
+   0587H: LD      (0FBFCH),HL
+   4386H: LD      (0FBFCH),HL
+   4398H: LD      (0FBFCH),HL
+
+Indirect address 0fd3eH. 1 references:
+--------------------------------------
+
+   3a22H: LD      (0FD3EH),A
+
+Indirect address 0fe40H. 1 references:
+--------------------------------------
+
+   006eH: LD      (0FE40H),A
+
+Indirect address 0fe41H. 5 references:
+--------------------------------------
+
+   44cfH: LD      (0FE41H),A
+   45e2H: LD      HL,(0FE41H)
+   4608H: LD      (0FE41H),HL
+   4633H: LD      A,(0FE41H)
+   4665H: LD      A,(0FE41H)
+
+Indirect address 0fe42H. 29 references:
+---------------------------------------
+
+   0030H: LD      A,(0FE42H)
+   08eeH: LD      A,(0FE42H)
+   0b2cH: LD      (0FE42H),A
+   0c7aH: LD      A,(0FE42H)
+   0c84H: LD      A,(0FE42H)
+   0c8eH: LD      A,(0FE42H)
+   10beH: LD      A,(0FE42H)
+   10ebH: LD      A,(0FE42H)
+   116eH: LD      A,(0FE42H)
+   11d4H: LD      (0FE42H),A
+   141cH: LD      A,(0FE42H)
+   147aH: LD      A,(0FE42H)
+   14aaH: LD      A,(0FE42H)
+   14caH: LD      A,(0FE42H)
+   14e8H: LD      (0FE42H),A
+   14fdH: LD      A,(0FE42H)
+   32a8H: LD      (0FE42H),A
+   411eH: LD      (0FE42H),A
+   4516H: LD      (0FE42H),A
+   4552H: LD      A,(0FE42H)
+   45a0H: LD      A,(0FE42H)
+   4624H: LD      A,(0FE42H)
+   464aH: LD      A,(0FE42H)
+   46beH: LD      A,(0FE42H)
+   490fH: LD      A,(0FE42H)
+   4e05H: LD      A,(0FE42H)
+   4ec9H: LD      (0FE42H),A
+   5337H: LD      A,(0FE42H)
+   5488H: LD      A,(0FE42H)
+
+Indirect address 0fe43H. 14 references:
+---------------------------------------
+
+   079eH: LD      (0FE43H),A
+   07c7H: LD      A,(0FE43H)
+   07deH: LD      (0FE43H),A
+   116bH: LD      (0FE43H),A
+   11c0H: LD      A,(0FE43H)
+   16a1H: LD      (0FE43H),A
+   16bbH: LD      A,(0FE43H)
+   16c0H: LD      (0FE43H),A
+   16c9H: LD      A,(0FE43H)
+   16d2H: LD      (0FE43H),A
+   16dbH: LD      A,(0FE43H)
+   1712H: LD      A,(0FE43H)
+   1717H: LD      (0FE43H),A
+   171cH: LD      A,(0FE43H)
+
+Indirect address 0fe44H. 7 references:
+--------------------------------------
+
+   079bH: LD      (0FE44H),A
+   07e1H: LD      (0FE44H),A
+   084cH: LD      (0FE44H),A
+   0884H: LD      (0FE44H),A
+   08b7H: LD      A,(0FE44H)
+   096aH: LD      (0FE44H),A
+   0983H: LD      A,(0FE44H)
+
+Indirect address 0fe45H. 7 references:
+--------------------------------------
+
+   0ac1H: LD      (0FE45H),HL
+   0ad8H: LD      (0FE45H),HL
+   0ae2H: LD      HL,(0FE45H)
+   0af9H: LD      (0FE45H),HL
+   0c08H: LD      HL,(0FE45H)
+   17f0H: LD      HL,(0FE45H)
+   1975H: LD      HL,(0FE45H)
+
+Indirect address 0fe47H. 6 references:
+--------------------------------------
+
+   0aa5H: LD      A,(0FE47H)
+   0ab0H: LD      (0FE47H),A
+   0b0fH: LD      A,(0FE47H)
+   0ba7H: LD      (0FE47H),A
+   0bfaH: LD      A,(0FE47H)
+   1794H: LD      A,(0FE47H)
+
+Indirect address 0fe48H. 5 references:
+--------------------------------------
+
+   0accH: LD      (0FE48H),A
+   0ae9H: LD      (0FE48H),A
+   0b29H: LD      A,(0FE48H)
+   17aeH: LD      A,(0FE48H)
+   17ccH: LD      A,(0FE48H)
+
+Indirect address 0fe49H. 6 references:
+--------------------------------------
+
+   0ac7H: LD      (0FE49H),HL
+   0b1aH: LD      HL,(0FE49H)
+   0b33H: LD      HL,(0FE49H)
+   0dc2H: LD      HL,(0FE49H)
+   1438H: LD      A,(0FE49H)
+   178cH: LD      HL,(0FE49H)
+
+Indirect address 0fe4bH. 1 references:
+--------------------------------------
+
+   0b39H: LD      HL,(0FE4BH)
+
+Indirect address 0fe51H. 5 references:
+--------------------------------------
+
+   00b2H: LD      (0FE51H),HL
+   4175H: LD      HL,(0FE51H)
+   4747H: LD      HL,(0FE51H)
+   4891H: LD      HL,(0FE51H)
+   48beH: LD      (0FE51H),HL
+
+Indirect address 0fe53H. 6 references:
+--------------------------------------
+
+   4116H: LD      HL,(0FE53H)
+   4128H: LD      (0FE53H),HL
+   42adH: LD      HL,(0FE53H)
+   42b7H: LD      (0FE53H),HL
+   4768H: LD      (0FE53H),HL
+   47b2H: LD      (0FE53H),HL
+
+Indirect address 0fe56H. 1 references:
+--------------------------------------
+
+   0d18H: LD      HL,(0FE56H)
+
+Indirect address 0fe74H. 3 references:
+--------------------------------------
+
+   426cH: LD      HL,(0FE74H)
+   42ddH: LD      HL,(0FE74H)
+   4314H: LD      HL,(0FE74H)
+
+Indirect address 0fe76H. 9 references:
+--------------------------------------
+
+   4155H: LD      HL,(0FE76H)
+   4161H: LD      (0FE76H),HL
+   4178H: LD      (0FE76H),HL
+   420cH: LD      HL,(0FE76H)
+   4236H: LD      HL,(0FE76H)
+   42a0H: LD      HL,(0FE76H)
+   42a8H: LD      (0FE76H),HL
+   44beH: LD      HL,(0FE76H)
+   474aH: LD      (0FE76H),HL
+
+Indirect address 0fe78H. 15 references:
+---------------------------------------
+
+   10afH: LD      (0FE78H),HL
+   1118H: LD      HL,(0FE78H)
+   1131H: LD      (0FE78H),HL
+   1493H: LD      (0FE78H),HL
+   14b6H: LD      (0FE78H),HL
+   14d9H: LD      HL,(0FE78H)
+   1525H: LD      HL,(0FE78H)
+   152cH: LD      (0FE78H),HL
+   1570H: LD      HL,(0FE78H)
+   4660H: LD      (0FE78H),HL
+   4693H: LD      HL,(0FE78H)
+   5483H: LD      A,(0FE78H)
+   54a1H: LD      A,(0FE78H)
+   54dfH: LD      (0FE78H),A
+   5784H: LD      A,(0FE78H)
+
+Indirect address 0fe7aH. 2 references:
+--------------------------------------
+
+   41ecH: LD      (0FE7AH),HL
+   41f7H: LD      HL,(0FE7AH)
+
+Indirect address 0fe7cH. 3 references:
+--------------------------------------
+
+   09aaH: LD      (0FE7CH),HL
+   09bfH: LD      HL,(0FE7CH)
+   09d5H: LD      HL,(0FE7CH)
+
+Indirect address 0fe7eH. 1 references:
+--------------------------------------
+
+   0559H: LD      HL,(0FE7EH)
+
+Indirect address 0fe80H. 8 references:
+--------------------------------------
+
+   099fH: LD      (0FE80H),A
+   14a2H: LD      (0FE80H),A
+   15dcH: LD      (0FE80H),A
+   451aH: LD      A,(0FE80H)
+   4530H: LD      (0FE80H),A
+   4780H: LD      (0FE80H),A
+   4815H: LD      (0FE80H),A
+   481cH: LD      (0FE80H),A
+
+Indirect address 0fe81H. 8 references:
+--------------------------------------
+
+   0f14H: LD      A,(0FE81H)
+   0fa4H: LD      (0FE81H),A
+   0fb5H: LD      A,(0FE81H)
+   0fddH: LD      A,(0FE81H)
+   1015H: LD      A,(0FE81H)
+   4957H: LD      A,(0FE81H)
+   4961H: LD      (0FE81H),A
+   4a67H: LD      (0FE81H),A
+
+Indirect address 0fe82H. 7 references:
+--------------------------------------
+
+   0a32H: LD      HL,(0FE82H)
+   472eH: LD      (0FE82H),HL
+   4785H: LD      HL,(0FE82H)
+   4810H: LD      (0FE82H),A
+   4826H: LD      A,(0FE82H)
+   48d2H: LD      (0FE82H),HL
+   493cH: LD      HL,(0FE82H)
+
+Indirect address 0fe84H. 5 references:
+--------------------------------------
+
+   0c21H: LD      (0FE84H),A
+   18f0H: LD      (0FE84H),A
+   1905H: LD      A,(0FE84H)
+   1981H: LD      A,(0FE84H)
+   4718H: LD      (0FE84H),A
+
+Indirect address 0fe85H. 10 references:
+---------------------------------------
+
+   0646H: LD      A,(0FE85H)
+   0661H: LD      (0FE85H),A
+   066aH: LD      (0FE85H),A
+   0680H: LD      A,(0FE85H)
+   06c2H: LD      (0FE85H),A
+   06cfH: LD      A,(0FE85H)
+   06e2H: LD      A,(0FE85H)
+   0d94H: LD      (0FE85H),A
+   3886H: LD      A,(0FE85H)
+   4715H: LD      (0FE85H),A
+
+Indirect address 0fe86H. 3 references:
+--------------------------------------
+
+   064cH: LD      HL,(0FE86H)
+   06bcH: LD      (0FE86H),HL
+   0d98H: LD      (0FE86H),HL
+
+Indirect address 0fe88H. 2 references:
+--------------------------------------
+
+   06aeH: LD      HL,(0FE88H)
+   0d91H: LD      (0FE88H),HL
+
+Indirect address 0fe8aH. 7 references:
+--------------------------------------
+
+   05a7H: LD      HL,(0FE8AH)
+   0643H: LD      (0FE8AH),HL
+   069fH: LD      (0FE8AH),HL
+   0a3dH: LD      (0FE8AH),HL
+   0f22H: LD      HL,(0FE8AH)
+   47acH: LD      (0FE8AH),HL
+   47c6H: LD      HL,(0FE8AH)
+
+Indirect address 0fe8cH. 7 references:
+--------------------------------------
+
+   059bH: LD      HL,(0FE8CH)
+   09c9H: LD      (0FE8CH),HL
+   0c37H: LD      (0FE8CH),HL
+   32d3H: LD      HL,(0FE8CH)
+   4705H: LD      (0FE8CH),HL
+   475fH: LD      (0FE8CH),HL
+   4938H: LD      (0FE8CH),HL
+
+Indirect address 0fe8eH. 4 references:
+--------------------------------------
+
+   058dH: LD      (0FE8EH),HL
+   05aeH: LD      HL,(0FE8EH)
+   0600H: LD      HL,(0FE8EH)
+   1251H: LD      HL,(0FE8EH)
+
+Indirect address 0fe90H. 2 references:
+--------------------------------------
+
+   0595H: LD      (0FE90H),HL
+   1673H: LD      (0FE90H),HL
+
+Indirect address 0fe92H. 1 references:
+--------------------------------------
+
+   05aaH: LD      (0FE92H),HL
+
+Indirect address 0fe94H. 3 references:
+--------------------------------------
+
+   05bdH: LD      HL,(0FE94H)
+   0704H: LD      (0FE94H),HL
+   4741H: LD      (0FE94H),HL
+
+Indirect address 0fe96H. 4 references:
+--------------------------------------
+
+   054eH: LD      A,(0FE96H)
+   0cf0H: LD      A,(0FE96H)
+   473cH: LD      (0FE96H),A
+   47a9H: LD      (0FE96H),A
+
+Indirect address 0fe97H. 14 references:
+---------------------------------------
+
+   10a7H: LD      (0FE97H),HL
+   10aaH: LD      HL,(0FE97H)
+   12a4H: LD      HL,(0FE97H)
+   147fH: LD      (0FE97H),HL
+   1497H: LD      HL,(0FE97H)
+   14b2H: LD      (0FE97H),HL
+   14ceH: LD      HL,(0FE97H)
+   1520H: LD      HL,(0FE97H)
+   4604H: LD      (0FE97H),HL
+   46d4H: LD      HL,(0FE97H)
+   5578H: LD      A,(0FE97H)
+   563eH: LD      HL,(0FE97H)
+   56e5H: LD      (0FE97H),HL
+   5791H: LD      (0FE97H),HL
+
+Indirect address 0fe99H. 2 references:
+--------------------------------------
+
+   05b6H: LD      (0FE99H),HL
+   47c3H: LD      (0FE99H),HL
+
+Indirect address 0fe9bH. 4 references:
+--------------------------------------
+
+   05baH: LD      (0FE9BH),HL
+   4744H: LD      (0FE9BH),HL
+   47c9H: LD      (0FE9BH),HL
+   47edH: LD      HL,(0FE9BH)
+
+Indirect address 0fe9dH. 12 references:
+---------------------------------------
+
+   0707H: LD      HL,(0FE9DH)
+   0713H: LD      (0FE9DH),HL
+   181aH: LD      HL,(0FE9DH)
+   1826H: LD      (0FE9DH),HL
+   33d9H: LD      HL,(0FE9DH)
+   3444H: LD      (0FE9DH),HL
+   3465H: LD      HL,(0FE9DH)
+   419dH: LD      HL,(0FE9DH)
+   457fH: LD      HL,(0FE9DH)
+   471fH: LD      (0FE9DH),HL
+   4750H: LD      HL,(0FE9DH)
+   48aeH: LD      HL,(0FE9DH)
+
+Indirect address 0fe9fH. 7 references:
+--------------------------------------
+
+   1829H: LD      (0FE9FH),HL
+   4197H: LD      HL,(0FE9FH)
+   41c1H: LD      HL,(0FE9FH)
+   4579H: LD      HL,(0FE9FH)
+   45baH: LD      (0FE9FH),HL
+   4611H: LD      HL,(0FE9FH)
+   4753H: LD      (0FE9FH),HL
+
+Indirect address 0fea1H. 12 references:
+---------------------------------------
+
+   0caeH: LD      HL,(0FEA1H)
+   182cH: LD      (0FEA1H),HL
+   417fH: LD      HL,(0FEA1H)
+   4439H: LD      HL,(0FEA1H)
+   44a8H: LD      HL,(0FEA1H)
+   45aaH: LD      HL,(0FEA1H)
+   45b5H: LD      (0FEA1H),HL
+   4688H: LD      (0FEA1H),HL
+   46e7H: LD      HL,(0FEA1H)
+   4756H: LD      (0FEA1H),HL
+   482eH: LD      HL,(0FEA1H)
+   483bH: LD      (0FEA1H),HL
+
+Indirect address 0fea3H. 2 references:
+--------------------------------------
+
+   0f9fH: LD      HL,(0FEA3H)
+   479eH: LD      (0FEA3H),HL
+
+Indirect address 0febfH. 3 references:
+--------------------------------------
+
+   154bH: LD      (0FEBFH),HL
+   158dH: LD      HL,(0FEBFH)
+   477dH: LD      (0FEBFH),HL
+
+Indirect address 0fec1H. 4 references:
+--------------------------------------
+
+   152fH: LD      A,(0FEC1H)
+   1551H: LD      (0FEC1H),HL
+   453dH: LD      HL,(0FEC1H)
+   4771H: LD      (0FEC1H),HL
+
+Indirect address 0ff27H. 1 references:
+--------------------------------------
+
+   0051H: LD      (0FF27H),HL
+
+Indirect address 0ff29H. 5 references:
+--------------------------------------
+
+   14e1H: LD      (0FF29H),A
+   1502H: LD      A,(0FF29H)
+   154eH: LD      HL,(0FF29H)
+   1561H: LD      (0FF29H),HL
+   4777H: LD      (0FF29H),HL
+
+Indirect address 0ff8fH. 3 references:
+--------------------------------------
+
+   4538H: LD      (0FF8FH),A
+   456fH: LD      A,(0FF8FH)
+   4576H: LD      (0FF8FH),A
+
+Indirect address 0ff90H. 5 references:
+--------------------------------------
+
+   419aH: LD      (0FF90H),HL
+   41d2H: LD      (0FF90H),HL
+   4544H: LD      (0FF90H),HL
+   4562H: LD      A,(0FF90H)
+   457cH: LD      (0FF90H),HL
+
+Indirect address 0ff91H. 1 references:
+--------------------------------------
+
+   4569H: LD      A,(0FF91H)
+
+Indirect address 0ff92H. 4 references:
+--------------------------------------
+
+   156dH: LD      (0FF92H),A
+   15acH: LD      (0FF92H),A
+   4534H: LD      A,(0FF92H)
+   4774H: LD      (0FF92H),A
+
+Indirect address 0ff93H. 3 references:
+--------------------------------------
+
+   4194H: LD      (0FF93H),HL
+   41b9H: LD      HL,(0FF93H)
+   41c7H: LD      (0FF93H),HL
+
+Indirect address 0ff95H. 5 references:
+--------------------------------------
+
+   1564H: LD      HL,(0FF95H)
+   1568H: LD      (0FF95H),HL
+   15a3H: LD      HL,(0FF95H)
+   15a7H: LD      (0FF95H),HL
+   477aH: LD      (0FF95H),HL
+
+Indirect address 0ff97H. 2 references:
+--------------------------------------
+
+   0580H: LD      A,(0FF97H)
+   438aH: LD      (0FF97H),A
+
+Indirect address 0ff98H. 2 references:
+--------------------------------------
+
+   0a5cH: LD      A,(0FF98H)
+   4803H: LD      (0FF98H),A
+
+Indirect address 0ff99H. 3 references:
+--------------------------------------
+
+   5682H: LD      (0FF99H),A
+   56b6H: LD      (0FF99H),A
+   56f0H: LD      A,(0FF99H)
+
+Indirect address 0ffa2H. 4 references:
+--------------------------------------
+
+   4fc7H: LD      (0FFA2H),A
+   5123H: LD      (0FFA2H),A
+   5135H: LD      (0FFA2H),A
+   5186H: LD      A,(0FFA2H)
+
+Indirect address 0ffa3H. 2 references:
+--------------------------------------
+
+   11b2H: LD      (0FFA3H),HL
+   4f10H: LD      (0FFA3H),HL
+
+Indirect address 0ffa5H. 2 references:
+--------------------------------------
+
+   11aeH: LD      (0FFA5H),HL
+   4f13H: LD      (0FFA5H),HL
+
+Indirect address 0ffa7H. 39 references:
+---------------------------------------
+
+   08f5H: LD      HL,(0FFA7H)
+   0b36H: LD      (0FFA7H),HL
+   0ca0H: LD      HL,(0FFA7H)
+   0e30H: LD      HL,(0FFA7H)
+   0e34H: LD      HL,(0FFA7H)
+   1160H: LD      HL,(0FFA7H)
+   11a2H: LD      HL,(0FFA7H)
+   11dcH: LD      (0FFA7H),HL
+   11faH: LD      (0FFA7H),HL
+   12b2H: LD      (0FFA7H),HL
+   133dH: LD      HL,(0FFA7H)
+   1391H: LD      (0FFA7H),HL
+   1581H: LD      HL,(0FFA7H)
+   32a3H: LD      (0FFA7H),HL
+   3429H: LD      (0FFA7H),A
+   342fH: LD      A,(0FFA7H)
+   4119H: LD      (0FFA7H),HL
+   4248H: LD      HL,(0FFA7H)
+   4255H: LD      HL,(0FFA7H)
+   4292H: LD      HL,(0FFA7H)
+   43c5H: LD      HL,(0FFA7H)
+   45d3H: LD      (0FFA7H),HL
+   45dcH: LD      (0FFA7H),HL
+   4952H: LD      HL,(0FFA7H)
+   4ab6H: LD      HL,(0FFA7H)
+   4ac4H: LD      HL,(0FFA7H)
+   4dcdH: LD      HL,(0FFA7H)
+   4dd7H: LD      HL,(0FFA7H)
+   4de7H: LD      (0FFA7H),HL
+   4eaaH: LD      HL,(0FFA7H)
+   4ec4H: LD      (0FFA7H),HL
+   4ef6H: LD      HL,(0FFA7H)
+   4f6cH: LD      A,(0FFA7H)
+   50beH: LD      HL,(0FFA7H)
+   53deH: LD      HL,(0FFA7H)
+   53f5H: LD      (0FFA7H),HL
+   5834H: LD      HL,(0FFA7H)
+   5843H: LD      (0FFA7H),HL
+   59b9H: LD      (0FFA7H),HL
+
+Indirect address 0ffa9H. 18 references:
+---------------------------------------
+
+   0b3cH: LD      (0FFA9H),HL
+   11f6H: LD      (0FFA9H),HL
+   4d8cH: LD      A,(0FFA9H)
+   4ddcH: LD      HL,(0FFA9H)
+   4decH: LD      (0FFA9H),HL
+   4fb5H: LD      A,(0FFA9H)
+   5152H: LD      A,(0FFA9H)
+   52a2H: LD      A,(0FFA9H)
+   5957H: LD      (0FFA9H),A
+   598fH: LD      (0FFA9H),A
+   59b5H: LD      (0FFA9H),HL
+   5a01H: LD      A,(0FFA9H)
+   5b30H: LD      A,(0FFA9H)
+   5b39H: LD      (0FFA9H),A
+   5b82H: LD      A,(0FFA9H)
+   5b8cH: LD      (0FFA9H),A
+   5b97H: LD      A,(0FFA9H)
+   5b9cH: LD      (0FFA9H),A
+
+Indirect address 0ffaaH. 15 references:
+---------------------------------------
+
+   0028H: LD      A,(0FFAAH)
+   1853H: LD      A,(0FFAAH)
+   45ceH: LD      (0FFAAH),A
+   4afeH: LD      A,(0FFAAH)
+   4b5eH: LD      (0FFAAH),A
+   4c34H: LD      (0FFAAH),A
+   4eb8H: LD      A,(0FFAAH)
+   5270H: LD      A,(0FFAAH)
+   56a4H: LD      A,(0FFAAH)
+   5703H: LD      A,(0FFAAH)
+   5976H: LD      A,(0FFAAH)
+   599bH: LD      A,(0FFAAH)
+   59d5H: LD      A,(0FFAAH)
+   5b2aH: LD      A,(0FFAAH)
+   5be1H: LD      A,(0FFAAH)
+
+Indirect address 0ffacH. 1 references:
+--------------------------------------
+
+   5132H: LD      A,(0FFACH)
+
+Indirect address 0ffb3H. 3 references:
+--------------------------------------
+
+   52c8H: LD      (0FFB3H),A
+   5a47H: LD      HL,(0FFB3H)
+   5a51H: LD      (0FFB3H),HL
+
+Indirect address 0ffb4H. 2 references:
+--------------------------------------
+
+   5219H: LD      A,(0FFB4H)
+   5269H: LD      A,(0FFB4H)
+
+Indirect address 0ffddH. 2 references:
+--------------------------------------
+
+   4c6aH: LD      (0FFDDH),A
+   4c96H: LD      A,(0FFDDH)
+
+Indirect address 0ffdeH. 2 references:
+--------------------------------------
+
+   4c6eH: LD      (0FFDEH),HL
+   4c90H: LD      HL,(0FFDEH)
+
+
+End of reference file for "D:\WorkRoot\FC-100\·ÒÆÄÀÏ\BASIC(FC-100).ROM"
+
