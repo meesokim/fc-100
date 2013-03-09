@@ -19,21 +19,20 @@
 class MEMORY : public DEVICE
 {
 private:
-	DEVICE *d_kbd;
-	
-	uint8 rom[0x6000];
-#ifdef _MAP1010
-	uint8 ram[0x8000];
-#else
-	uint8 ram[0x4000];
-#endif
-	uint8 vram[0x1800];
+	uint8 rom[0x6000]; // BASIC 24KB $0000 (8KB x 3)
+	uint8 ram[0x4000]; // MAIN DRAM 16KB $C000(16384 x 8bit)
+	uint8 pcgram[256 * 8];// SRAM 2KB (6116: 2048 x 8bit, 0x0800)
+	uint8 cgrom[512 * 8]; // CGROM 4KB (0x1000)
+	uint8 extrom[0x2000]; // EXT ROM 8KB $6000
+	uint8 extram[0x4000]; // EXT RAM 16KB $8000
 	
 	uint8 wdmy[0x800];
 	uint8 rdmy[0x800];
 	uint8* wbank[32];
 	uint8* rbank[32];
-	
+	uint8 romsel;
+	bool ramsel;
+
 public:
 	MEMORY(VM* parent_vm, EMU* parent_emu) : DEVICE(parent_vm, parent_emu) {}
 	~MEMORY() {}
@@ -41,6 +40,7 @@ public:
 	// common functions
 	void initialize();
 	void reset();
+	void readrom(uint32 data);
 	void write_data8(uint32 addr, uint32 data);
 	uint32 read_data8(uint32 addr);
 	void write_data16(uint32 addr, uint32 data) {
@@ -49,14 +49,12 @@ public:
 	uint32 read_data16(uint32 addr) {
 		return read_data8(addr) | (read_data8(addr + 1) << 8);
 	}
-	
+	void write_io8(uint32 addr, uint32 data);
+
 	// unique functions
-	void set_context_keyboard(DEVICE* device) {
-		d_kbd = device;
-	}
-	uint8* get_vram() {
-		return vram;
-	}
+	uint8* get_vram() { return ram; }
+	uint8* get_cgrom() { return cgrom; }
+	uint8* get_pcgram() { return pcgram; }
 };
 
 #endif
