@@ -1,6 +1,5 @@
 /*
-	SANYO PHC-25 Emulator 'ePHC-25'
-	SEIKO MAP-1010 Emulator 'eMAP-1010'
+	GOLDSTAR FC-100 Emulator
 	Skelton for retropc emulator
 
 	Author : Takeda.Toshiya
@@ -14,10 +13,10 @@
 #include "../device.h"
 #include "../event.h"
 
+#include "../i8251.h"
 #include "../datarec.h"
 #include "../io.h"
-#include "../i8251.h"
-#include "../mc6847.h"
+#include "../m5c6847.h"
 #include "../not.h"
 #include "../ym2203.h"
 #include "../z80.h"
@@ -26,6 +25,8 @@
 #include "keyboard.h"
 #include "memory.h"
 #include "system.h"
+#include "../../config.h"
+
 
 // ----------------------------------------------------------------------------
 // initialize
@@ -38,8 +39,8 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	dummy = new DEVICE(this, emu);	// must be 1st device
 	event = new EVENT(this, emu);	// must be 2nd device
 	
-	drec = new DATAREC(this, emu);
 	sio = new I8251(this, emu);
+	drec = new DATAREC(this, emu);
 	io = new IO(this, emu);
 	vdp = new MC6847(this, emu);
 	not = new NOT(this, emu);
@@ -54,20 +55,13 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	// set contexts
 	event->set_context_cpu(cpu);
 	event->set_context_sound(psg);
-	
+
 	vdp->set_vram_ptr(memory->get_vram(), 0x1800);
+	vdp->set_cgrom_ptr(memory->get_cgrom());
+	vdp->set_pcgram_ptr(memory->get_pcgram());
 	vdp->set_context_vsync(not, SIG_NOT_INPUT, 1);
 	not->set_context_out(cpu, SIG_CPU_IRQ, 1);
-	
-	vdp->set_context_vsync(system, SIG_SYSTEM_PORT, 0x10);
-	drec->set_context_out(system, SIG_SYSTEM_PORT, 0x20);
-	// bit6: printer busy
-	vdp->set_context_hsync(system, SIG_SYSTEM_PORT, 0x80);
-	
-	joystick->set_context_psg(psg);
-#ifdef _MAP1010
-	memory->set_context_keyboard(keyboard);
-#endif
+
 	system->set_context_drec(drec);
 	system->set_context_vdp(vdp);
 	
@@ -77,25 +71,17 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	cpu->set_context_intr(dummy);
 	
 	// i/o bus
-	//io->set_iomap_single_rw(0x40, system);
-	io->set_iomap_single_rw(0x10, system);
-
+	io->set_iomap_range_r(0x00, 0x0f, keyboard);
+	io->set_iomap_range_w(0x10, 0x1f, system);
+	io->set_iomap_range_w(0x30, 0x3f, system);
+	for(int i = 0x20; i < 0x30; i += 4) {
+		io->set_iomap_alias_w(i+1, psg, 1);
+		io->set_iomap_alias_r(i+2, psg, 1);
+		io->set_iomap_alias_w(i+3, psg, 0);
+	}
+	io->set_iomap_range_w(0x60, 0x7f, memory);
 	io->set_iomap_alias_rw(0xb0, sio, 0);
 	io->set_iomap_alias_rw(0xb8, sio, 1);
-
-
-#ifndef _MAP1010
-	io->set_iomap_range_r(0x00, 0x0f, keyboard);
-#endif
-//	io->set_iomap_alias_w(0xc0, psg, 1);	// PSG data
-//	io->set_iomap_alias_w(0xc1, psg, 0);	// PSG ch
-////	io->set_iomap_alias_r(0xc0, psg, 1);
-//	io->set_iomap_alias_r(0xc1, psg, 1);	// PSG data
-	
-	io->set_iomap_alias_w(0x21, psg, 1);	// PSG data
-	io->set_iomap_alias_r(0x22, psg, 1);	// PSG data
-	io->set_iomap_alias_w(0x23, psg, 0);	// PSG ch
-
 
 	// initialize all devices
 	for(DEVICE* device = first_device; device; device = device->next_device) {
@@ -130,6 +116,7 @@ DEVICE* VM::get_device(int id)
 
 void VM::reset()
 {
+	memory->readrom(config.device_type);
 	// reset all devices
 	for(DEVICE* device = first_device; device; device = device->next_device) {
 		device->reset();
@@ -160,7 +147,7 @@ void VM::initialize_sound(int rate, int samples)
 	event->initialize_sound(rate, samples);
 	
 	// init sound gen
-	psg->init(rate, 1996750, samples, 0, 0);
+	psg->init(rate, CPU_CLOCKS / 2, samples, 0, 0);
 }
 
 uint16* VM::create_sound(int* extra_frames)
@@ -174,12 +161,12 @@ uint16* VM::create_sound(int* extra_frames)
 
 void VM::key_down(int code, bool repeat)
 {
-	keyboard->key_down(code);
+	keyboard->set_keyboard();
 }
 
 void VM::key_up(int code)
 {
-	keyboard->key_up(code);
+	keyboard->set_keyboard();
 }
 
 // ----------------------------------------------------------------------------
@@ -212,4 +199,3 @@ void VM::update_config()
 		device->update_config();
 	}
 }
-
