@@ -1,0 +1,241 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 대화 상자
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 223, 99
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SPC-1000 정보"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDI_ICON1,IDC_STATIC,14,14,20,20
+	LTEXT           "SPC-1000 VDP 버전 1.0 Copyright (C) 2012",IDC_STATIC,42,14,146,8,SS_NOPREFIX
+    LTEXT           "TAKEDA, toshiya",IDC_STATIC,42,60,56,8
+    DEFPUSHBUTTON   "확인",IDOK,86,79,50,14,WS_GROUP
+    LTEXT           "http://homepage3.nifty.com/takeda-toshiya/",IDC_STATIC,42,51,146,8
+    LTEXT           "Retro pc emulator common source code",IDC_STATIC,42,42,146,8
+    LTEXT           """오월의집,mayhouse"".   http://mayhouse.blog.me",IDC_STATIC,42,24,168,8,SS_NOPREFIX
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    VK_RETURN,      ID_ACCEL_SCREEN,        VIRTKEY, ALT, NOINVERT
+END
+
+#endif    // 한국어 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "&System"
+    BEGIN
+        MENUITEM "&Reset",                       ID_RESET
+		//MENUITEM "SPCComm Reset",               ID_SPECIAL_RESET
+        MENUITEM SEPARATOR
+		MENUITEM "&PC Keyboard",                 ID_SPECIAL_RESET
+        MENUITEM SEPARATOR
+        MENUITEM "SPC-1000A",					ID_SPC1000_TYPE4
+        MENUITEM "Enhanced",					ID_SPC1000_TYPE3
+        MENUITEM "Original",					ID_SPC1000_TYPE2
+        MENUITEM "Prototype",					ID_SPC1000_TYPE1
+        MENUITEM SEPARATOR
+        MENUITEM "CPU x&1",                      ID_CPU_POWER0
+        MENUITEM "CPU x&2",                      ID_CPU_POWER1
+        MENUITEM "CPU x&4",                      ID_CPU_POWER2
+        MENUITEM "CPU x&8",                      ID_CPU_POWER3
+        MENUITEM "CPU x1&6",                     ID_CPU_POWER4
+        MENUITEM SEPARATOR
+		MENUITEM "&Paste",						ID_AUTOKEY_START
+		MENUITEM "&Stop",						ID_AUTOKEY_STOP
+        MENUITEM SEPARATOR
+		MENUITEM "E&xit",                     ID_EXIT
+    END
+	POPUP "FDD &0",GRAYED
+	BEGIN
+		MENUITEM "&Open",                        ID_OPEN_FD1
+		MENUITEM "&Close",                        ID_CLOSE_FD1
+		MENUITEM SEPARATOR
+		MENUITEM "Recent",                      ID_RECENT_FD1
+    END
+	POPUP "FDD &1",GRAYED
+	BEGIN
+		MENUITEM "&Open",                        ID_OPEN_FD2
+		MENUITEM "&Close",                        ID_CLOSE_FD2
+		MENUITEM SEPARATOR
+		MENUITEM "Recent",                      ID_RECENT_FD2
+    END
+    POPUP "&Tape"
+    BEGIN
+        MENUITEM "Tape for Load(&L)",             ID_PLAY_DATAREC
+        MENUITEM "Tape for Save(&S)",             ID_REC_DATAREC
+        MENUITEM "&Close",                    ID_CLOSE_DATAREC
+        MENUITEM SEPARATOR
+        MENUITEM "PLAY"							ID_PLAY_BUTTON
+        MENUITEM "STOP"							ID_PLAY_BUTTON
+        MENUITEM SEPARATOR
+        MENUITEM "Recent",                    ID_RECENT_DATAREC
+    END
+    POPUP "&Video"
+    BEGIN
+        MENUITEM "&VDP Switch",					ID_VDP_MONITOR_SWITCH
+        MENUITEM SEPARATOR
+		MENUITEM "Record &60fps",                   ID_SCREEN_REC60
+		MENUITEM "Record &30fps",                   ID_SCREEN_REC30
+		MENUITEM "Record &15fps",                   ID_SCREEN_REC15
+		MENUITEM "&Stop",							ID_SCREEN_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "&Sceen Capture",                ID_SCREEN_CAPTURE
+        MENUITEM SEPARATOR
+        MENUITEM "Window x&1",                   ID_SCREEN_WINDOW1
+        MENUITEM "Window x&2",                   ID_SCREEN_WINDOW2
+        MENUITEM "Window x&3",                   ID_SCREEN_WINDOW3
+        MENUITEM "Window x&4",                   ID_SCREEN_WINDOW4
+        MENUITEM "&Fullscreen",			ID_SCREEN_FULLSCREEN1
+        MENUITEM SEPARATOR
+		MENUITEM "Digital",					ID_SCREEN_MONITOR_TYPE0,CHECKED,GRAYED
+		MENUITEM "Green Monitor",				ID_SCREEN_MONITOR_TYPE1,GRAYED
+		MENUITEM "Color Monitor",				ID_SCREEN_MONITOR_TYPE2,GRAYED
+		MENUITEM "Color TV",					ID_SCREEN_MONITOR_TYPE3,GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "Stretch Screen",              ID_SCREEN_STRETCH,GRAYED
+		MENUITEM "Scan&line",					ID_SCREEN_SCANLINE
+    END
+    POPUP "&Audio"
+    BEGIN
+        MENUITEM "&Record Start",                         ID_SOUND_REC
+        MENUITEM "Record &End",                        ID_SOUND_STOP
+        MENUITEM SEPARATOR
+        MENUITEM "2000Hz",                      ID_SOUND_FREQ0
+        MENUITEM "4000Hz",                      ID_SOUND_FREQ1
+        MENUITEM "8000Hz",                      ID_SOUND_FREQ2
+        MENUITEM "11025Hz",                     ID_SOUND_FREQ3
+        MENUITEM "22050Hz",                     ID_SOUND_FREQ4
+        MENUITEM "44100Hz",                     ID_SOUND_FREQ5
+        MENUITEM "48000Hz",                     ID_SOUND_FREQ6
+        MENUITEM "96000Hz",                     ID_SOUND_FREQ7
+        MENUITEM SEPARATOR
+        MENUITEM "50msec",                      ID_SOUND_LATE0
+        MENUITEM "100msec",                     ID_SOUND_LATE1
+        MENUITEM "200msec",                     ID_SOUND_LATE2
+        MENUITEM "300msec",                     ID_SOUND_LATE3
+        MENUITEM "400msec",                     ID_SOUND_LATE4
+    END
+/*    POPUP "&Help"
+	BEGIN
+        MENUITEM "Help",                      ID_HELP
+        MENUITEM "About",                     ID_ABOUT
+    END*/
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "spc1000.ico"
+#endif    // 영어(미국) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

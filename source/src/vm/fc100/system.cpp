@@ -1,6 +1,5 @@
 /*
-	SANYO PHC-25 Emulator 'ePHC-25'
-	SEIKO MAP-1010 Emulator 'eMAP-1010'
+	GoldStar FC-100 Emulator
 	Skelton for retropc emulator
 
 	Author : Takeda.Toshiya
@@ -11,7 +10,7 @@
 
 #include "system.h"
 #include "../datarec.h"
-#include "../mc6847.h"
+#include "../m5c6847.h"
 
 void SYSTEM::initialize()
 {
@@ -20,18 +19,17 @@ void SYSTEM::initialize()
 
 void SYSTEM::reset()
 {
-	d_vdp->write_signal(SIG_MC6847_INTEXT, 1, 1);
 }
 
 void SYSTEM::write_io8(uint32 addr, uint32 data)
 {
-	d_drec->write_signal(SIG_DATAREC_OUT, data, 0x01);
-	d_drec->write_signal(SIG_DATAREC_REMOTE, ~data, 0x02);
-	// bit2 : kana lock led ???
-	// bit3 : printer strobe
-	d_vdp->write_signal(SIG_MC6847_GM, (data & 0x20) ? 7 : 6, 7);
-	d_vdp->write_signal(SIG_MC6847_CSS, data, 0x40);
-	d_vdp->write_signal(SIG_MC6847_AG, data, 0x80);
+
+	switch(addr & 0xf0) {
+	case 0x10:
+		if ((addr & 0xf) == 0) d_vdp->write_signal(SIG_MC6847_AS,	data, 1);
+		if (addr & 1) d_vdp->write_signal(SIG_MC6847_AS,	data, 1);
+		break;
+	}
 }
 
 uint32 SYSTEM::read_io8(uint32 addr)

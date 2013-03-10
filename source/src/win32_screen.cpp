@@ -188,17 +188,20 @@ RETRY:
 	if(width != -1 && (display_width != width || display_height != height)) {
 		display_width = width;
 		display_height = height;
-		display_size_changed = stretch_changed = true;
+		stretch_changed = display_size_changed = true;
 	}
 	if(use_d3d9 != config.use_d3d9) {
 		if(!(use_d3d9 = config.use_d3d9)) {
 			release_d3d9();
 		}
-		display_size_changed = stretch_changed = true;
+		display_size_changed = true;
 	}
 	if(wait_vsync != config.wait_vsync) {
 		wait_vsync = config.wait_vsync;
-		display_size_changed = stretch_changed = true;
+	}
+	if(scan_line != config.scan_line) {
+		scan_line = config.scan_line;
+		stretch_changed = true;
 	}
 	
 	// virtual machine renders to d3d9 buffer directly???
@@ -243,7 +246,7 @@ RETRY:
 	}
 #endif
 	
-	if(config.stretch_screen && !window_mode) {
+	if(config.stretch_screen) {
 		// fit to full screen
 		stretched_width = (display_height * source_width_aspect) / source_height_aspect;
 		stretched_height = display_height;
@@ -287,7 +290,7 @@ RETRY:
 	if(stretch_pow_x != 1 || stretch_pow_y != 1) {
 		render_to_d3d9Buffer = false;
 	}
-	
+	// border color not support yet
 	if(stretch_changed) {
 		release_dib_section(hdcDibStretch1, hBmpStretch1, hOldBmpStretch1, lpBufStretch1);
 		release_dib_section(hdcDibStretch2, hBmpStretch2, hOldBmpStretch2, lpBufStretch2);
@@ -451,6 +454,8 @@ void EMU::draw_screen()
 		int data_len = source_width * stretch_pow_x;
 		
 		for(int y = 0; y < source_height; y++) {
+ 			// temporarily scanline is not include borderground
+			bool temporarily_scanline = config.scan_line && stretched_height > window_height;
 			if(stretch_pow_x != 1) {
 				scrntype* out_tmp = out;
 				for(int x = 0; x < source_width; x++) {
@@ -469,7 +474,7 @@ void EMU::draw_screen()
 			}
 			if(stretch_pow_y != 1) {
 				scrntype* src_tmp = out;
-				for(int py = 1; py < stretch_pow_y; py++) {
+				for(int py = 1; py < stretch_pow_y - (temporarily_scanline ? 1 : 0); py++) {
 					out -= data_len;
 					// about 10% faster than memcpy()
 					for(int x = 0; x < data_len; x++) {
@@ -478,7 +483,7 @@ void EMU::draw_screen()
 				}
 			}
 			src -= source_width;
-			out -= data_len;
+			out -= temporarily_scanline ? data_len * 2 : data_len;
 		}
 		if(!use_d3d9) {
 			StretchBlt(hdcDibStretch2, 0, 0, stretched_width, stretched_height, hdcDibStretch1, 0, 0, source_width * stretch_pow_x, source_height * stretch_pow_y, SRCCOPY);

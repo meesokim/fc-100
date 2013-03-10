@@ -1,10 +1,10 @@
 /*
-	SANYO PHC-25 Emulator 'ePHC-25'
-	SEIKO MAP-1010 Emulator 'eMAP-1010'
 	Skelton for retropc emulator
+	Origin : Takeda.Toshiya
+	
+	GOLDSTAR FC-100 Emulator
 
-	Author : Takeda.Toshiya
-	Date   : 2010.08.03-
+	Date   : 2013.03
 
 	[ keyboard ]
 */
@@ -19,14 +19,8 @@
 class KEYBOARD : public DEVICE
 {
 private:
-	BOOL CapsLock;
 	uint8* key_stat;
-	
-#ifdef _MAP1010
-	int kana_pressed;
-#else
 	uint8 status[16];
-#endif
 	
 public:
 	KEYBOARD(VM* parent_vm, EMU* parent_emu) : DEVICE(parent_vm, parent_emu) {}
@@ -36,10 +30,7 @@ public:
 	void initialize();
 	void reset();
 	uint32 read_io8(uint32 addr);
-	void event_frame();
-	void key_down(int code);
-	void key_up(int code);
-
+	void set_keyboard();
 };
 
 #endif
