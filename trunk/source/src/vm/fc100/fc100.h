@@ -15,6 +15,7 @@
 #define WINDOW_WIDTH		320
 #define WINDOW_HEIGHT		242
 // VDG
+#define MC6847_TYPE			M5C6847
 #define MC6847_VRAM_OFS		(as ? 0x2000 : 0)
 #define MC6847_ATTR_OFS		(as ? 0x3800 : 0x200)
 #define MC6847_ATTR_INV		0x01

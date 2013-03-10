@@ -4,11 +4,11 @@
 	Author : Takeda.Toshiya
 	Date   : 2010.08.03-
 
-	[ mc6847 ]
+	[ m5c6847p-1 ]
 */
 
-#ifndef _MC6847_H_
-#define _MC6847_H_
+#ifndef _M5C6847P_H_
+#define _M5C6847P_H_
 
 #include "vm.h"
 #include "../emu.h"
@@ -20,6 +20,8 @@
 #define SIG_MC6847_GM		3
 #define SIG_MC6847_CSS		4
 #define SIG_MC6847_INV		5
+#define S68047			0
+#define M5C6847			1
 
 class MC6847 : public DEVICE
 {
@@ -28,17 +30,19 @@ private:
 	outputs_t outputs_vsync;
 	outputs_t outputs_hsync;
 	
-	uint8 extfont[256 * 16];
+	uint8 *extfont_ptr;
 	uint8 sg4[16 * 12];
 	uint8 sg6[64 * 12];
 	uint8 screen[192][256];
 	uint8 *vram_ptr;
+	uint8 *pcgfont_ptr;
+	uint8 intfont[64 * 12];
 	int vram_size;
 	scrntype palette_pc[16];
 	
 	bool ag, as;
 	bool intext;
-	uint8 gm;
+	uint8 gm, bg; // border ground by zanny
 	bool css, inv;
 	
 	bool vsync, hsync;
@@ -49,6 +53,7 @@ private:
 	void draw_cg(int xofs, int yofs);
 	void draw_rg(int xofs, int yofs);
 	void draw_alpha();
+	void draw_char(int x, int y);
 	
 public:
 	MC6847(VM* parent_vm, EMU* parent_emu) : DEVICE(parent_vm, parent_emu) {
@@ -78,6 +83,12 @@ public:
 		vram_ptr = ptr; vram_size = size;
 	}
 	void draw_screen();
+	void set_cgrom_ptr(uint8* ptr) {
+		extfont_ptr = ptr;
+	}
+	void set_pcgram_ptr(uint8* ptr) {
+		pcgfont_ptr = ptr;
+	}
 };
 
 #endif
