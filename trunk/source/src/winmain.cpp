@@ -265,7 +265,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR szCmdLin
 					break;
 				}
 			}
+#ifdef USE_SCREEN_ROTATE
 			if(!found) {
+#else
+			if(!found && dev.dmPelsWidth > dev.dmPelsHeight) { // by zanny
+#endif
 				screen_mode_width[screen_mode_count] = dev.dmPelsWidth;
 				screen_mode_height[screen_mode_count] = dev.dmPelsHeight;
 				if(++screen_mode_count == 20) {
@@ -421,7 +425,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR szCmdLin
 			if(update_fps_time <= current_time) {
 				_TCHAR buf[256];
 				int ratio = (int)(100.0 * (double)draw_frames / (double)total_frames + 0.5);
+#if 1
+				_stprintf(buf, _T("%s"), _T(DEVICE_NAME));
+#else
 				_stprintf(buf, _T("%s - %d fps (%d %%)"), _T(DEVICE_NAME), draw_frames, ratio);
+#endif
 				SetWindowText(hWnd, buf);
 				
 				update_fps_time += 1000;
@@ -681,6 +689,27 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 		case ID_DIPSWITCH7:
 		case ID_DIPSWITCH8:
 			config.dipswitch ^= (1 << (LOWORD(wParam) - ID_DIPSWITCH1));
+			emu->update_config();
+			break;
+#endif
+#if defined(_SPC1000) || defined(_SPC1500)
+		case ID_MACHINE_TYPE1:
+		case ID_MACHINE_TYPE2:
+		case ID_MACHINE_TYPE3:
+		case ID_MACHINE_TYPE4:
+			config.device_type = LOWORD(wParam) - ID_MACHINE_TYPE1;
+			break;
+#endif
+#if defined(_SPC1000) || defined(_SPC1500)
+		case ID_VDP_MONITOR_SWITCH:
+			config.monitor_switch = !config.monitor_switch;
+			break;
+#endif
+#if defined(_FC100)
+		case ID_FC100_EXTPACK0:
+		case ID_FC100_EXTPACK1:
+		case ID_FC100_EXTPACK2:
+			config.device_type = LOWORD(wParam) - ID_FC100_EXTPACK0;
 			break;
 #endif
 #ifdef _HC80
@@ -1109,6 +1138,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 				emu->set_display_size(-1, -1, !now_fullscreen);
 			}
 			break;
+#ifdef USE_SCANLINE
+		case ID_SCREEN_SCANLINE:
+			config.scan_line = !config.scan_line;
+			if(emu) {
+				emu->update_config();
+				emu->set_display_size(-1, -1, false);
+			}
+			break;
+#endif
 		case ID_SCREEN_STRETCH:
 			config.stretch_screen = !config.stretch_screen;
 			if(emu) {
@@ -1143,14 +1181,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 					set_window(hWnd, prev_window_mode);
 				}
 #endif
-			}
-			break;
-#endif
-#ifdef USE_SCANLINE
-		case ID_SCREEN_SCANLINE:
-			config.scan_line = !config.scan_line;
-			if(emu) {
-				emu->update_config();
 			}
 			break;
 #endif
@@ -1276,6 +1306,16 @@ void update_menu(HWND hWnd, HMENU hMenu, int pos)
 #ifdef USE_DIPSWITCH
 		for(int i = 0; i < 8; i++) {
 			CheckMenuItem(hMenu, ID_DIPSWITCH1 + i, !(config.dipswitch & (1 << i)) ? MF_CHECKED : MF_UNCHECKED);
+		}
+#endif
+#ifdef _SPC1000
+		if(config.device_type >= 0 && config.device_type < 4) {
+			CheckMenuRadioItem(hMenu, ID_MACHINE_TYPE1, ID_MACHINE_TYPE4, ID_MACHINE_TYPE1 + config.device_type, MF_BYCOMMAND);
+		}
+#endif
+#ifdef _FC100
+		if(config.device_type >= 0 && config.device_type < 3) {
+			CheckMenuRadioItem(hMenu, ID_FC100_EXTPACK0, ID_FC100_EXTPACK2, ID_FC100_EXTPACK0 + config.device_type, MF_BYCOMMAND);
 		}
 #endif
 #ifdef _HC80
@@ -1513,6 +1553,9 @@ void update_menu(HWND hWnd, HMENU hMenu, int pos)
 				ZeroMemory(&info, sizeof(info));
 				info.cbSize = sizeof(info);
 				_TCHAR buf[64];
+#if !defined(USE_SCREEN_ROTATE)
+				if (screen_mode_width[i] >= screen_mode_height[i])
+#endif
 				_stprintf(buf, _T("Fullscreen %dx%d"), screen_mode_width[i], screen_mode_height[i]);
 				info.fMask = MIIM_TYPE;
 				info.fType = MFT_STRING;
@@ -1545,8 +1588,12 @@ void update_menu(HWND hWnd, HMENU hMenu, int pos)
 		}
 #endif
 #ifdef USE_SCANLINE
-		// scanline
 		CheckMenuItem(hMenu, ID_SCREEN_SCANLINE, config.scan_line ? MF_CHECKED : MF_UNCHECKED);
+		EnableMenuItem(hMenu, ID_SCREEN_SCANLINE, config.use_d3d9 ? MF_ENABLED : MF_GRAYED);
+#endif
+#if defined (_SPC1000) || defined(_SPC1500)
+		// VDP MONITOR
+		CheckMenuItem(hMenu, ID_VDP_MONITOR_SWITCH, config.monitor_switch ? MF_CHECKED : MF_UNCHECKED);
 #endif
 	}
 #endif
@@ -1710,6 +1757,10 @@ void open_datarec_dialog(HWND hWnd, bool play)
 #elif defined(DATAREC_TAP)
 		play ? _T("Supported Files (*.wav;*.cas;*.tap)\0*.wav;*.cas;*.tap\0All Files (*.*)\0*.*\0\0")
 		     : _T("Supported Files (*.wav;*.cas)\0*.wav;*.cas\0All Files (*.*)\0*.*\0\0"),
+// _SPC1000 || _SPC1500
+#elif defined(DATAREC_SPC)
+		play ? _T("Supported Files (*.wav;*.cas;*.tap;*.spc;*.ipl)\0*.wav;*.cas;*.tap;*.spc;*.ipl\0All Files (*.*)\0*.*\0\0")
+		     : _T("Supported Files (*.wav;*.cas)\0*.wav;*.cas;*.tap;*.ipl\0All Files (*.*)\0*.*\0\0"),
 #elif defined(DATAREC_MZT)
 		play ? _T("Supported Files (*.wav;*.cas;*.mzt;*.m12)\0*.wav;*.cas;*.mzt;*.m12\0All Files (*.*)\0*.*\0\0")
 		     : _T("Supported Files (*.wav;*.cas)\0*.wav;*.cas\0All Files (*.*)\0*.*\0\0"),

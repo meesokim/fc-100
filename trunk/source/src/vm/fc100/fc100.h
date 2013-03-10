@@ -1,12 +1,9 @@
 #ifndef _FC100_H_
 #define _FC100_H_
 
-#define DEVICE_NAME		"GoldStar FC-100"
+#define DEVICE_NAME		"GoldStar FC-100 by zanny for beta test only"
 #define CONFIG_NAME		"fc100"
 #define CONFIG_VERSION		0x01
-
-// 8bit I/O
-#define IO_ADDR_MAX 0x100
 
 // device informations for virtual machine
 #define FRAMES_PER_SEC		60
@@ -31,9 +28,8 @@
 #define USE_SCANLINE
 #define USE_DATAREC
 #define USE_ALT_F10_KEY
-#define USE_AUTO_KEY_CAPS
-#define USE_AUTO_KEY			6
-#define USE_AUTO_KEY_RELEASE	7
+#define USE_AUTO_KEY			8
+#define USE_AUTO_KEY_RELEASE	9
 #define NOTIFY_KEY_DOWN
 
 #include "../../common.h"

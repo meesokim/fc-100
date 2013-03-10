@@ -31,6 +31,17 @@
 #define ID_DIPSWITCH7                   40027
 #define ID_DIPSWITCH8                   40028
 
+#define ID_SPC_VDP_SWITCH				40030
+
+#define ID_MACHINE_TYPE1                40032
+#define ID_MACHINE_TYPE2                40033
+#define ID_MACHINE_TYPE3                40034
+#define ID_MACHINE_TYPE4                40035
+
+#define ID_FC100_EXTPACK0				40031
+#define ID_FC100_EXTPACK1				40032
+#define ID_FC100_EXTPACK2				40033
+
 #define ID_HC80_RAMDISK0                40031
 #define ID_HC80_RAMDISK1                40032
 #define ID_HC80_RAMDISK2                40033
@@ -119,13 +130,17 @@
 #define ID_STOP_BUTTON                  40925
 #define ID_RECENT_DATAREC               40931 // 40931-40938
 
-#define ID_LOAD_BINARY1                 40941
-#define ID_SAVE_BINARY1                 40942
-#define ID_RECENT_BINARY1               40943 // 40943-40950
+#define ID_OPEN_MEDIA                   40941
+#define ID_CLOSE_MEDIA                  40942
+#define ID_RECENT_MEDIA                 40943 // 40943-40950
 
-#define ID_LOAD_BINARY2                 40951
-#define ID_SAVE_BINARY2                 40952
-#define ID_RECENT_BINARY2               40953 // 40953-40960
+#define ID_LOAD_BINARY1                 40951
+#define ID_SAVE_BINARY1                 40952
+#define ID_RECENT_BINARY1               40953 // 40951-40960
+
+#define ID_LOAD_BINARY2                 40961
+#define ID_SAVE_BINARY2                 40962
+#define ID_RECENT_BINARY2               40963 // 40961-40970
 
 #define ID_SCREEN_REC60                 41001
 #define ID_SCREEN_REC30                 41002
@@ -417,7 +432,7 @@
 #define MENU_POS_FD2                    2
 #define MENU_POS_FD3                    3
 #define MENU_POS_FD4                    4
-#define MENU_POS_DATAREC                5
+#define MENU_POS_MEDIA                  5
 #define MENU_POS_SCREEN                 6
 #define MENU_POS_SOUND                  7
 #endif
@@ -747,4 +762,52 @@
 #ifdef _YS6464A
 #define MENU_POS_CONTROL                0
 #define MENU_POS_BINARY1                1
+#endif
+
+// ABOUT
+#ifdef USE_ABOUT
+#define IDD_HELP						1220
+#define IDC_HELPTEXT					1221
+
+#define IDD_ABOUT						1231
+#define IDC_ABOUT_URL					1232
+#define IDC_ABOUT_ICON					1233
+#define IDC_ABOUT_TEXT					1234
+#define IDC_ABOUT_EMAIL					1235
+
+#define ID_HELP							2001
+#define ID_ABOUT						2002
+#endif
+
+// SAMSUNG SPC-1500
+#ifdef _SPC1500
+#define MENU_POS_CONTROL                0
+#ifdef USE_FD1
+#define MENU_POS_FD1                    1
+#define MENU_POS_FD2                    2
+#endif
+#define MENU_POS_DATAREC                3
+#define MENU_POS_BINARY1                4
+#define MENU_POS_SCREEN                 5
+#define MENU_POS_SOUND                  6
+#endif
+
+// SAMSUNG SPC-1000
+#ifdef _SPC1000
+#define MENU_POS_CONTROL                0
+#ifdef USE_FD1
+#define MENU_POS_FD1                    1
+#define MENU_POS_FD2                    2
+#endif
+#define MENU_POS_DATAREC                3
+#define MENU_POS_SCREEN                 4
+#define MENU_POS_SOUND                  5
+#endif
+
+// GOLDSTAR FC-100
+#ifdef _FC100
+#define MENU_POS_CONTROL                0
+#define MENU_POS_DATAREC                1
+#define MENU_POS_SCREEN                 2
+#define MENU_POS_SOUND                  3
 #endif

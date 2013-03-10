@@ -1,6 +1,5 @@
 /*
-	SANYO PHC-25 Emulator 'ePHC-25'
-	SEIKO MAP-1010 Emulator 'eMAP-1010'
+	GoldStar FC-100 Emulator
 	Skelton for retropc emulator
 
 	Author : Takeda.Toshiya
@@ -40,6 +39,7 @@ public:
 	// common functions
 	void initialize();
 	void reset();
+	void read_bios(_TCHAR *file_name, uint8 *buffer, int size, int crc32);
 	void readrom(uint32 data);
 	void write_data8(uint32 addr, uint32 data);
 	uint32 read_data8(uint32 addr);

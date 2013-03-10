@@ -1,5 +1,5 @@
 /*
-	GOLDSTAR FC-100 Emulator
+	GoldStar FC-100 Emulator
 	Skelton for retropc emulator
 
 	Author : Takeda.Toshiya
@@ -62,6 +62,7 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	vdp->set_context_vsync(not, SIG_NOT_INPUT, 1);
 	not->set_context_out(cpu, SIG_CPU_IRQ, 1);
 
+	joystick->set_context_psg(psg);
 	system->set_context_drec(drec);
 	system->set_context_vdp(vdp);
 	

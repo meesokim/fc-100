@@ -1,4 +1,5 @@
 /*
+	GoldStar FC-100 Emulator
 	Skelton for retropc emulator
 
 	Author : Takeda.Toshiya
@@ -39,80 +40,48 @@ void MEMORY::initialize()
 	SET_BANK(0xc000, 0xffff, ram, ram); // 32KB
 }
 
-void MEMORY::readrom(uint32 data)
+void MEMORY::read_bios(_TCHAR *file_name, uint8 *buffer, int size, int crc32)
 {
-	ramsel = (data & 1) != 0; // ext ram: 1, ext rom : 2
-	// load rom image
 	FILEIO* fio = new FILEIO();
-#ifdef _IO_DEBUG_LOG
-	emu->out_debug(_T("Loading...\n"));
-#endif
-	if(fio->Fopen(emu->bios_path(_T("FC100U48.ROM")), FILEIO_READ_BINARY)) {
-		fio->Fread(rom, 0x2000, 1);
+	int length = 0;
+	
+	if(fio->Fopen(emu->bios_path(file_name), FILEIO_READ_BINARY)) {
+		fio->Fread(buffer, size, 1);
+		length = fio->Ftell();
 		fio->Fclose();
-		if (getcrc32(rom, 0x2000) != 0x24E78E75) memset(rom, 0xff, 0x2000);
-	}
-#ifdef _IO_DEBUG_LOG
-	else emu->out_debug(_T("FC100U48.ROM Fail.\n"));
-#endif
-
-	if(fio->Fopen(emu->bios_path(_T("FC100U49.ROM")), FILEIO_READ_BINARY)) {
-		fio->Fread(&rom[0x2000], 0x2000, 1);
-		fio->Fclose();
-		if (getcrc32(rom + 0x2000, 0x2000) != 0xE14FC7E9) memset(rom + 0x2000, 0xff, 0x2000);
-	}
-#ifdef _IO_DEBUG_LOG
-	else emu->out_debug(_T("FC100U49.ROM Fail.\n"));
-#endif
-
-	if(fio->Fopen(emu->bios_path(_T("FC100U50.ROM")), FILEIO_READ_BINARY)) {
-		fio->Fread(&rom[0x4000], 0x2000, 1);
-		fio->Fclose();
-		if (getcrc32(rom + 0x4000, 0x2000) != 0xD783C84E) memset(rom + 0x4000, 0xff, 0x2000);
-	}
-#ifdef _IO_DEBUG_LOG
-	else emu->out_debug(_T("FC100U50.ROM Fail.\n"));
-#endif
-
-	if (data & 2) {// extrom on : type = 2
-#ifdef _IO_DEBUG_LOG
-		emu->out_debug(_T("Checking...\n"));
-#endif
-		if(fio->Fopen(emu->bios_path(_T("FC100EXT.ROM")), FILEIO_READ_BINARY)) {
-			fio->Fread(extrom, 0x2000, 1);
-			fio->Fclose();
-#ifdef _IO_DEBUG_LOG
-			if (extrom[0] != 0x47 && extrom[1] != 0x53) {
-				emu->out_debug(_T("GS-ROM OK."));
-			}
-			else if (extrom[0x8c2] != 0xd8) {
-				emu->out_debug(_T("EXTROM OK."));
-			}
-			else{
-				emu->out_debug(_T("Fail. (Unknown ROM)"));
-				memset(extrom, 0xff, 0x2000);
-			}
-#endif
+		if (crc32 && getcrc32(buffer, size) != crc32) {
+			memset(buffer, 0xff, size);
+			length = 0;
 		}
-#ifdef _IO_DEBUG_LOG
-		else emu->out_debug(_T("FC100EXT.ROM Fail.\n"));
-#endif
-	}
-
-	if(fio->Fopen(emu->bios_path(_T("FC100U53.ROM")), FILEIO_READ_BINARY)) {
-		fio->Fread(cgrom, 0x1000, 1);
-		fio->Fclose();
-		if (getcrc32(cgrom, 0x1000) != 0x2DE75B7F) {
-			memset(cgrom, 0xff, 0x1000);
-		}
-	}
-	else{
-#ifdef _IO_DEBUG_LOG
-		emu->out_debug(_T("FC100U53.ROM Fail.\n"));
-#endif
-		memset(cgrom, 0xff, sizeof(cgrom));
 	}
 	delete fio;
+}
+
+void MEMORY::readrom(uint32 data)
+{
+	// 0: none or ROM pack, 1: 10H type, 2: 10HB type
+	ramsel = data & 1;
+	// load rom image
+	FILEIO* fio = new FILEIO();
+	read_bios(_T("FC100U48.ROM"), rom + 0x0000, 0x2000, 0x24E78E75); // ROM 08-01
+	read_bios(_T("FC100U49.ROM"), rom + 0x2000, 0x2000, 0xE14FC7E9); // ROM 08-02
+	read_bios(_T("FC100U50.ROM"), rom + 0x4000, 0x2000, 0xD783C84E); // ROM 06-03
+	read_bios(_T("FC100U53.ROM"), cgrom, 0x1000, 0x2DE75B7F); // ROM 04-01
+	if (data) {
+		read_bios(_T("FC100EXT.ROM"), extrom, 0x2000, 0);
+#ifdef _IO_DEBUG_LOG
+		if (extrom[0] != 0x47 && extrom[1] != 0x53) {
+			emu->out_debug(_T("GS-ROM OK."));
+		}
+		else if (extrom[0x8c2] != 0xd8) {
+			emu->out_debug(_T("EXTROM OK."));
+		}
+		else{
+			emu->out_debug(_T("Fail. (Unknown ROM)"));
+			memset(extrom, 0xff, 0x2000);
+		}
+#endif
+	}
 }
 
 void MEMORY::write_io8(uint32 addr, uint32 data)
