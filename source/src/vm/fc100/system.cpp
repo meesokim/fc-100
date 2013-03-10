@@ -10,7 +10,7 @@
 
 #include "system.h"
 #include "../datarec.h"
-#include "../m5c6847.h"
+#include "../mc6847.h"
 
 void SYSTEM::initialize()
 {
