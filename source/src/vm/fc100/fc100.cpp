@@ -16,7 +16,7 @@
 #include "../i8251.h"
 #include "../datarec.h"
 #include "../io.h"
-#include "../m5c6847.h"
+#include "../mc6847.h"
 #include "../not.h"
 #include "../ym2203.h"
 #include "../z80.h"
