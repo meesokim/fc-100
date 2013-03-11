@@ -14,10 +14,6 @@
 #define MC6847_VRAM_OFS	0
 #endif
 
-#ifndef MC6847_TYPE
-#define MC6847_TYPE	2
-#endif
-
 #define GREEN		0
 #define YELLOW		1
 #define BLUE		2
@@ -35,16 +31,6 @@
 void MC6847::initialize()
 {
 	memset(intfont, 0, sizeof(intfont));
-
-	// internal font
-	FILEIO* fio = new FILEIO();
-	if(fio->Fopen(emu->bios_path(_T(MC6847_TYPE ? (MC6847_TYPE & 1 ? "M5C6847.ROM" : "MC6847.ROM") : "S68047.ROM")), FILEIO_READ_BINARY)) {
-		for (int i = 0; i < 64; i++) {
-			fio->Fread(&intfont[i*12+2], 8, 1);
-		}
-		fio->Fclose();
-	}
-	delete fio;
 
 	// semigraphics pattern
 	for(int i = 0; i < 16; i++) {
@@ -86,6 +72,16 @@ void MC6847::initialize()
 
 void MC6847::reset()
 {
+	// internal font
+	FILEIO* fio = new FILEIO();
+	if(fio->Fopen(emu->bios_path(_T(vdg_type ? (vdg_type & 1 ? "M5C6847.ROM" : "MC6847.ROM") : "S68047.ROM")), FILEIO_READ_BINARY)) {
+		for (int i = 0; i < 64; i++) {
+			fio->Fread(&intfont[i*12+2], 8, 1);
+		}
+		fio->Fclose();
+	}
+	delete fio;
+
 	vsync = hsync = true;
 }
 

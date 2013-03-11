@@ -28,6 +28,7 @@
 // device informations for win32
 #define USE_SCANLINE
 #define USE_DATAREC
+#define DATAREC_SOUND
 #define USE_ALT_F10_KEY
 #define USE_AUTO_KEY			8
 #define USE_AUTO_KEY_RELEASE	9
@@ -51,6 +52,7 @@ class JOYSTICK;
 class KEYBOARD;
 class MEMORY;
 class SYSTEM;
+class CMT;
 
 class VM
 {
@@ -72,7 +74,8 @@ protected:
 	KEYBOARD* keyboard;
 	MEMORY* memory;
 	SYSTEM* system;
-	
+	CMT* cmt;
+
 public:
 	// ----------------------------------------
 	// initialize
