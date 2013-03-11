@@ -23,13 +23,15 @@ void SYSTEM::reset()
 
 void SYSTEM::write_io8(uint32 addr, uint32 data)
 {
-
-	switch(addr & 0xf0) {
-	case 0x10:
-		if ((addr & 0xf) == 0) d_vdp->write_signal(SIG_MC6847_AS,	data, 1);
-		if (addr & 1) d_vdp->write_signal(SIG_MC6847_AS,	data, 1);
-		break;
+	// this part is not real circuit, just logic emulate for test
+	addr &= 0xff;
+	if (addr == 0x31) {
+		d_drec->write_signal(SIG_DATAREC_TRIG, ~data, 8);
 	}
+	if (addr == 0x33) {
+		d_drec->write_signal(SIG_DATAREC_REMOTE, 0, 0);
+	}
+	if (addr < 0x20) d_vdp->write_signal(SIG_MC6847_AS, data, 1);
 }
 
 uint32 SYSTEM::read_io8(uint32 addr)

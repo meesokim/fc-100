@@ -595,12 +595,9 @@ void EMU::update_screen(HDC hdc)
 		
 		if(render_in || render_out) {
 			COLORREF crColor = RGB((status & 1) ? 255 : 0, (status & 2) ? 255 : 0, (status & 4) ? 255 : 0);
-			int right_bottom_x = screen_dest_x + stretched_width;
-			int right_bottom_y = screen_dest_y + stretched_height;
-			
 			for(int y = display_height - 6; y < display_height; y++) {
 				for(int x = display_width - 6; x < display_width; x++) {
-					if((x < right_bottom_x && y < right_bottom_y) ? render_in : render_out) {
+					if((x < stretched_width && y < stretched_height) ? render_in : render_out) {
 						SetPixelV(hdc, x, y, crColor);
 					}
 				}

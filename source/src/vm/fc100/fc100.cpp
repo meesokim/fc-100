@@ -57,8 +57,7 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	event->set_context_sound(psg);
 
 	vdp->set_vram_ptr(memory->get_vram(), 0x1800);
-	vdp->set_cgrom_ptr(memory->get_cgrom());
-	vdp->set_pcgram_ptr(memory->get_pcgram());
+	vdp->set_font_ptr(memory->get_cgrom(), memory->get_pcgram());
 	vdp->set_context_vsync(not, SIG_NOT_INPUT, 1);
 	not->set_context_out(cpu, SIG_CPU_IRQ, 1);
 
@@ -71,6 +70,9 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	cpu->set_context_io(io);
 	cpu->set_context_intr(dummy);
 	
+	sio->set_context_out(drec, SIG_DATAREC_OUT);
+	drec->set_context_out(sio, SIG_I8251_RECV, 1);
+
 	// i/o bus
 	io->set_iomap_range_r(0x00, 0x0f, keyboard);
 	io->set_iomap_range_w(0x10, 0x1f, system);

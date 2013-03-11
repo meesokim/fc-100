@@ -20,8 +20,10 @@
 #define SIG_MC6847_GM		3
 #define SIG_MC6847_CSS		4
 #define SIG_MC6847_INV		5
-#define S68047			0
-#define M5C6847			1
+
+#define s68047				0
+#define mc6847				1
+#define m5c6847				2
 
 class MC6847 : public DEVICE
 {
@@ -42,8 +44,9 @@ private:
 	
 	bool ag, as;
 	bool intext;
-	uint8 gm, bg; // border ground by zanny
+	uint8 gm;
 	bool css, inv;
+	uint8 vdg_type, bg; // chip type, border ground color
 	
 	bool vsync, hsync;
 	int tWHS;
@@ -82,13 +85,14 @@ public:
 	void set_vram_ptr(uint8* ptr, int size) {
 		vram_ptr = ptr; vram_size = size;
 	}
+	void set_font_ptr(uint8* ptr1, uint8* ptr2) {
+		extfont_ptr = ptr1;
+		pcgfont_ptr = ptr2;
+	}
+	void set_vdg_type(int type) {
+		vdg_type = type;
+	}
 	void draw_screen();
-	void set_cgrom_ptr(uint8* ptr) {
-		extfont_ptr = ptr;
-	}
-	void set_pcgram_ptr(uint8* ptr) {
-		pcgfont_ptr = ptr;
-	}
 };
 
 #endif

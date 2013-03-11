@@ -701,8 +701,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
 			break;
 #endif
 #if defined(_SPC1000) || defined(_SPC1500)
-		case ID_VDP_MONITOR_SWITCH:
-			config.monitor_switch = !config.monitor_switch;
+		case ID_SPC_VDP_SWITCH:
+			config.dipswitch = ~config.dipswitch & 0x80 | config.dipswitch & 0x7f;
 			break;
 #endif
 #if defined(_FC100)
@@ -1593,7 +1593,7 @@ void update_menu(HWND hWnd, HMENU hMenu, int pos)
 #endif
 #if defined (_SPC1000) || defined(_SPC1500)
 		// VDP MONITOR
-		CheckMenuItem(hMenu, ID_VDP_MONITOR_SWITCH, config.monitor_switch ? MF_CHECKED : MF_UNCHECKED);
+		CheckMenuItem(hMenu, ID_SPC_VDP_SWITCH, config.dipswitch & 0x80 ? MF_CHECKED : MF_UNCHECKED);
 #endif
 	}
 #endif
