@@ -4,11 +4,11 @@
 	Author : Takeda.Toshiya
 	Date   : 2010.08.03-
 
-	[ m5c6847p-1 ]
+	[ m5c6847 ]
 */
 
-#ifndef _M5C6847P_H_
-#define _M5C6847P_H_
+#ifndef _MC6847_H_
+#define _MC6847_H_
 
 #include "vm.h"
 #include "../emu.h"
@@ -93,6 +93,9 @@ public:
 		vdg_type = type;
 	}
 	void draw_screen();
+	scrntype get_border_color() {
+		return palette_pc[bg];
+	}
 };
 
 #endif

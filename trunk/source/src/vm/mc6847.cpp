@@ -27,7 +27,7 @@
 #define TXTGREEN	9
 #define TXTRED		10
 #define TXTORANGE	11
-
+ 
 void MC6847::initialize()
 {
 	memset(intfont, 0, sizeof(intfont));

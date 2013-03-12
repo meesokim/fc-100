@@ -9,7 +9,7 @@
 */
 
 #include "system.h"
-#include "../datarec.h"
+#include "cmt.h"
 #include "../mc6847.h"
 
 void SYSTEM::initialize()
@@ -26,12 +26,13 @@ void SYSTEM::write_io8(uint32 addr, uint32 data)
 	// this part is not real circuit, just logic emulate for test
 	addr &= 0xff;
 	if (addr == 0x31) {
-		d_drec->write_signal(SIG_DATAREC_TRIG, ~data, 8);
+		d_drec->write_signal(SIG_CMT_TRIG, ~data, 8);
 	}
 	if (addr == 0x33) {
-		d_drec->write_signal(SIG_DATAREC_REMOTE, 0, 0);
+		d_drec->write_signal(SIG_CMT_REMOTE, 0, 0);
 	}
-	if (addr < 0x20) d_vdp->write_signal(SIG_MC6847_AS, data, 1);
+	if (addr == 0x10) d_vdp->write_signal(SIG_MC6847_AS, 0, 1);
+	if (addr == 0x11) d_vdp->write_signal(SIG_MC6847_AS, 1, 1);
 }
 
 uint32 SYSTEM::read_io8(uint32 addr)
