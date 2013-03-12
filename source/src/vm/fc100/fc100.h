@@ -28,7 +28,7 @@
 // device informations for win32
 #define USE_SCANLINE
 #define USE_DATAREC
-#define DATAREC_SOUND
+#define DATAREC_BINARY_ONLY
 #define USE_ALT_F10_KEY
 #define USE_AUTO_KEY			8
 #define USE_AUTO_KEY_RELEASE	9
@@ -41,7 +41,7 @@ class DEVICE;
 class EVENT;
 
 class I8251;
-class DATAREC;
+class CMT;
 class IO;
 class MC6847;
 class NOT;
@@ -52,7 +52,6 @@ class JOYSTICK;
 class KEYBOARD;
 class MEMORY;
 class SYSTEM;
-class CMT;
 
 class VM
 {
@@ -63,7 +62,7 @@ protected:
 	EVENT* event;
 	
 	I8251* sio;
-	DATAREC* drec;
+	CMT* drec;
 	IO* io;
 	MC6847* vdp;
 	NOT* not;
@@ -74,7 +73,6 @@ protected:
 	KEYBOARD* keyboard;
 	MEMORY* memory;
 	SYSTEM* system;
-	CMT* cmt;
 
 public:
 	// ----------------------------------------
@@ -94,6 +92,7 @@ public:
 	
 	// draw screen
 	void draw_screen();
+	int access_lamp();
 	
 	// sound generation
 	void initialize_sound(int rate, int samples);

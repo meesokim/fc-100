@@ -14,7 +14,7 @@
 #include "../event.h"
 
 #include "../i8251.h"
-#include "../datarec.h"
+//#include "../datarec.h"
 #include "../io.h"
 #include "../mc6847.h"
 #include "../not.h"
@@ -25,6 +25,7 @@
 #include "keyboard.h"
 #include "memory.h"
 #include "system.h"
+#include "cmt.h"
 #include "../../config.h"
 
 
@@ -40,7 +41,7 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	event = new EVENT(this, emu);	// must be 2nd device
 	
 	sio = new I8251(this, emu);
-	drec = new DATAREC(this, emu);
+	drec = new CMT(this, emu);
 	io = new IO(this, emu);
 	vdp = new MC6847(this, emu);
 	not = new NOT(this, emu);
@@ -64,14 +65,14 @@ VM::VM(EMU* parent_emu) : emu(parent_emu)
 	joystick->set_context_psg(psg);
 	system->set_context_drec(drec);
 	system->set_context_vdp(vdp);
+	drec->set_context_sio(sio);
 	
 	// cpu bus
 	cpu->set_context_mem(memory);
 	cpu->set_context_io(io);
 	cpu->set_context_intr(dummy);
 	
-	sio->set_context_out(drec, SIG_DATAREC_OUT);
-	drec->set_context_out(sio, SIG_I8251_RECV, 1);
+	sio->set_context_out(drec, SIG_CMT_OUT);
 
 	// i/o bus
 	io->set_iomap_range_r(0x00, 0x0f, keyboard);
@@ -193,7 +194,7 @@ void VM::close_datarec()
 
 bool VM::now_skip()
 {
-	return drec->skip();
+	return false;
 }
 
 void VM::update_config()
